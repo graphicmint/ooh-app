@@ -1,0 +1,57 @@
+[
+  {
+    "id": "v-1",
+    "name": "Times OOH",
+    "contact_person": "Corporate Sales Desk",
+    "phone": "+91 22 6635 3535",
+    "email": "sales@timesooh.in"
+  },
+  {
+    "id": "v-2",
+    "name": "Bright Outdoor Media Ltd.",
+    "contact_person": "Yogesh Lakhani",
+    "phone": "+91 98200 44555",
+    "email": "info@brightoutdoor.com"
+  },
+  {
+    "id": "v-3",
+    "name": "Pioneer Publicity Corp.",
+    "contact_person": "Regional Director",
+    "phone": "+91 11 2332 7788",
+    "email": "business@pioneerpublicity.com"
+  },
+  {
+    "id": "v-4",
+    "name": "Laqshya Media Group",
+    "contact_person": "Key Accounts Lead",
+    "phone": "+91 22 4055 9900",
+    "email": "ooh@laqshyamedia.com"
+  },
+  {
+    "id": "v-5",
+    "name": "Signpost India Ltd.",
+    "contact_person": "Strategic Alliances",
+    "phone": "+91 22 6128 0000",
+    "email": "connect@signpostindia.com"
+  },
+  {
+    "id": "v-6",
+    "name": "Jagran Engage",
+    "contact_person": "Outdoor Operations",
+    "phone": "+91 120 407 1000",
+    "email": "engage@jagran.com"
+  },
+  {
+    "id": "v-7",
+    "name": "TDI International India",
+    "contact_person": "Airports & Metro Lead",
+    "phone": "+91 11 4165 5555",
+    "email": "corp@tdiindia.com"
+  },
+  {
+    "id": "v-1793621659666",
+    "name": "Global Street Media Group",
+    "contact_person": "Vikram Mehta",
+    "phone": "+91 98111 22334"
+  }
+]
