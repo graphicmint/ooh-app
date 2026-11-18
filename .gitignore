@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 push_to_github.bat
+
+start_app.bat
