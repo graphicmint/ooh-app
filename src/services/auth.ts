@@ -70,7 +70,7 @@ export const authService = {
     if (!isPasswordCorrect) {
       return {
         isValid: false,
-        error: `Invalid passkey. Password is today's date (DDMMYYYY) divided by 2.`,
+        error: 'Invalid security passkey. Please try again.',
       };
     }
 

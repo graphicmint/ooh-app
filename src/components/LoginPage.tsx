@@ -4,14 +4,12 @@ import {
   ShieldCheck,
   Eye,
   EyeOff,
-  Sparkles,
   ArrowRight,
   AlertCircle,
   KeyRound,
-  Calendar,
 } from 'lucide-react';
 import { AuthUser } from '../types/auth';
-import { authService, getTodayPasscode } from '../services/auth';
+import { authService } from '../services/auth';
 import {
   InterspaceLogo,
   SubtleBrandWatermark,
@@ -30,8 +28,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const todayPasscode = getTodayPasscode();
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -48,12 +44,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
         setError(result.error || 'Authentication failed. Please verify your credentials.');
       }
     }, 350);
-  };
-
-  const handleFillDemo = () => {
-    setEmail('Graphicmint@gmail.com');
-    setPassword(todayPasscode);
-    setError(null);
   };
 
   return (
@@ -112,15 +102,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
           </div>
 
           <div className="space-y-1.5">
-            <div className="flex items-center justify-between">
-              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
-                Security Passkey
-              </label>
-              <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
-                <Calendar className="w-3 h-3 text-[#0DCAF0]" />
-                <span>Daily Dynamic (Date ÷ 2)</span>
-              </span>
-            </div>
+            <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
+              Security Passkey
+            </label>
             <div className="relative">
               <KeyRound className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
@@ -128,7 +112,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter today's dynamic passkey"
+                placeholder="Enter security passkey"
                 className="w-full pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#AF1763]/40 focus:border-[#AF1763] font-mono tracking-wider transition-all"
               />
               <button
@@ -142,7 +126,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-1">
+          <div className="flex items-center pt-1">
             <label className="flex items-center gap-2 cursor-pointer select-none">
               <input
                 type="checkbox"
@@ -152,10 +136,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
               />
               <span className="text-xs text-slate-600 dark:text-slate-400">Remember session</span>
             </label>
-
-            <span className="text-[11px] text-slate-400">
-              Format: <strong className="text-slate-600 dark:text-[#0DCAF0] font-mono">DDMMYYYY ÷ 2</strong>
-            </span>
           </div>
 
           <button
@@ -173,34 +153,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
             )}
           </button>
         </form>
-
-        {/* Quick Helper Box */}
-        <div className="pt-2 border-t border-slate-100 dark:border-[#2C2E33]">
-          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-200 dark:border-[#2C2E33] space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#0D6EFD]" />
-                <span>Quick Access Profile</span>
-              </span>
-              <button
-                type="button"
-                onClick={handleFillDemo}
-                className="text-[10px] font-extrabold text-[#0DCAF0] hover:underline flex items-center gap-1 cursor-pointer"
-              >
-                <Sparkles className="w-3 h-3" /> Auto-Fill Credentials
-              </button>
-            </div>
-
-            <div className="text-[11px] font-mono text-slate-600 dark:text-slate-400 space-y-0.5">
-              <div>
-                Email ID: <span className="text-slate-900 dark:text-slate-200 font-semibold">Graphicmint@gmail.com</span>
-              </div>
-              <div>
-                Passkey Formula: <span className="text-[#AF1763] dark:text-[#e84c96] font-bold">Current Date (DDMMYYYY) ÷ 2</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
