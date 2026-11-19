@@ -11,7 +11,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import { AuthUser } from '../types/auth';
-import { authService, getTodayDateCode } from '../services/auth';
+import { authService, getTodayPasscode } from '../services/auth';
 import {
   InterspaceLogo,
   SubtleBrandWatermark,
@@ -23,14 +23,14 @@ interface LoginPageProps {
 }
 
 export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) => {
-  const [email, setEmail] = useState('ganesh.sagwekar@interspaceindia.co.in');
+  const [email, setEmail] = useState('Graphicmint@gmail.com');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const todayPasscode = getTodayDateCode();
+  const todayPasscode = getTodayPasscode();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +51,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
   };
 
   const handleFillDemo = () => {
-    setEmail('ganesh.sagwekar@interspaceindia.co.in');
+    setEmail('Graphicmint@gmail.com');
     setPassword(todayPasscode);
     setError(null);
   };
@@ -96,7 +96,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
-              Corporate Email ID
+              Email ID
             </label>
             <div className="relative">
               <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -105,7 +105,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="ganesh.sagwekar@interspaceindia.co.in"
+                placeholder="Graphicmint@gmail.com"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#AF1763]/40 focus:border-[#AF1763] transition-all"
               />
             </div>
@@ -118,7 +118,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
               </label>
               <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
                 <Calendar className="w-3 h-3 text-[#0DCAF0]" />
-                <span>Format: DDMMYYYY</span>
+                <span>Daily Dynamic (Date ÷ 2)</span>
               </span>
             </div>
             <div className="relative">
@@ -128,7 +128,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder={`Current date (e.g. ${todayPasscode})`}
+                placeholder="Enter today's dynamic passkey"
                 className="w-full pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#AF1763]/40 focus:border-[#AF1763] font-mono tracking-wider transition-all"
               />
               <button
@@ -154,7 +154,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
             </label>
 
             <span className="text-[11px] text-slate-400">
-              Passkey: <strong className="text-slate-600 dark:text-[#0DCAF0] font-mono">{todayPasscode}</strong>
+              Format: <strong className="text-slate-600 dark:text-[#0DCAF0] font-mono">DDMMYYYY ÷ 2</strong>
             </span>
           </div>
 
@@ -193,10 +193,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
 
             <div className="text-[11px] font-mono text-slate-600 dark:text-slate-400 space-y-0.5">
               <div>
-                User: <span className="text-slate-900 dark:text-slate-200 font-semibold">ganesh.sagwekar@interspaceindia.co.in</span>
+                Email ID: <span className="text-slate-900 dark:text-slate-200 font-semibold">Graphicmint@gmail.com</span>
               </div>
               <div>
-                Password (Today): <span className="text-[#AF1763] dark:text-[#e84c96] font-bold">{todayPasscode}</span>
+                Passkey Formula: <span className="text-[#AF1763] dark:text-[#e84c96] font-bold">Current Date (DDMMYYYY) ÷ 2</span>
               </div>
             </div>
           </div>
