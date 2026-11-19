@@ -58,16 +58,14 @@ export function App() {
   const [storedCategories, setStoredCategories] = useState<string[]>([]);
   const [storedVendors, setStoredVendors] = useState<string[]>([]);
 
-  // Dark Mode State
+  // Dark Mode State (defaults to dark to match the #191C24 / #AF1763 dashboard scheme)
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
-      return (
-        localStorage.getItem('advantage_theme') === 'dark' ||
-        (!('advantage_theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      );
+      const saved = localStorage.getItem('blitzdeck_theme_v2');
+      if (saved === 'light') return false;
+      return true;
     }
-    return false;
+    return true;
   });
 
   // Filter States
@@ -129,10 +127,10 @@ export function App() {
   useEffect(() => {
     if (isDark) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('advantage_theme', 'dark');
+      localStorage.setItem('blitzdeck_theme_v2', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('advantage_theme', 'light');
+      localStorage.setItem('blitzdeck_theme_v2', 'light');
     }
   }, [isDark]);
 
@@ -456,7 +454,7 @@ export function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#000000] text-slate-900 dark:text-slate-100 transition-colors">
       {/* Top Navbar */}
       <Navbar
         currentPortal={activePortal}
@@ -541,12 +539,12 @@ export function App() {
           {/* Results Area */}
           {isLoading ? (
             <div className="flex flex-col items-center justify-center py-20 text-slate-400">
-              <Loader2 className="w-8 h-8 animate-spin text-[#E31B64] mb-3" />
+              <Loader2 className="w-8 h-8 animate-spin text-[#AF1763] mb-3" />
               <p className="text-sm font-medium">Loading OOH site portfolio...</p>
             </div>
           ) : filteredSites.length === 0 ? (
-            <div className="rounded-2xl border border-dashed border-rose-200 dark:border-rose-950/60 p-12 text-center bg-white/50 dark:bg-slate-900/50">
-              <div className="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-400 flex items-center justify-center mx-auto mb-4 border border-rose-200/50">
+            <div className="rounded-2xl border border-dashed border-rose-200 dark:border-[#2C2E33] p-12 text-center bg-white/50 dark:bg-[#191C24]/50">
+              <div className="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-400 flex items-center justify-center mx-auto mb-4 border border-rose-200/50">
                 <Inbox className="w-7 h-7" />
               </div>
               <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">
@@ -564,7 +562,7 @@ export function App() {
                 </button>
                 <button
                   onClick={handleOpenAddSite}
-                  className="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#E31B64] via-[#E63946] to-[#F37023] hover:from-[#D81B60] hover:to-[#EA580C] text-white shadow-md flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#AF1763] via-[#C2185B] to-[#0DCAF0] hover:from-[#8F1250] hover:to-[#0D6EFD] text-white shadow-md flex items-center gap-1.5"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Add New Site</span>
@@ -609,7 +607,7 @@ export function App() {
       {selectedUids.length > 0 && activePortal === 'advantage' && (
         <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-3 px-5 py-3 rounded-2xl bg-slate-900/95 dark:bg-slate-800/95 text-white shadow-2xl border border-slate-700 backdrop-blur-md animate-slide-up">
           <div className="flex items-center gap-2 text-xs font-semibold pr-3 border-r border-slate-700">
-            <CheckSquare className="w-4 h-4 text-[#E31B64]" />
+            <CheckSquare className="w-4 h-4 text-[#AF1763]" />
             <span>
               <strong>{selectedUids.length}</strong> site{selectedUids.length !== 1 ? 's' : ''} selected
             </span>
@@ -617,7 +615,7 @@ export function App() {
 
           <button
             onClick={() => setIsExportModalOpen(true)}
-            className="px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#E31B64] via-[#E63946] to-[#F37023] hover:from-[#D81B60] hover:to-[#EA580C] text-white flex items-center gap-1.5 transition-all shadow-md"
+            className="px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#AF1763] via-[#C2185B] to-[#0DCAF0] hover:from-[#8F1250] hover:to-[#0D6EFD] text-white flex items-center gap-1.5 transition-all shadow-md"
           >
             <Presentation className="w-3.5 h-3.5" />
             <span>Export Pitch Deck (.pptx)</span>
@@ -641,10 +639,10 @@ export function App() {
       )}
 
       {/* Footer */}
-      <footer className="mt-auto border-t border-rose-100/60 dark:border-rose-950/40 bg-white/50 dark:bg-slate-900/50 py-6 transition-colors">
+      <footer className="mt-auto border-t border-slate-200 dark:border-[#2C2E33] bg-white/80 dark:bg-[#191C24] py-6 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-slate-800 dark:text-slate-200">
+            <span className="font-bold text-slate-800 dark:text-white">
               BlitzDeck & SiteSync
             </span>
             <span>• Outdoor Media Planning & Master Vault Architecture</span>
@@ -653,7 +651,7 @@ export function App() {
             <button
               onClick={() => handleSelectPortal('advantage')}
               className={`hover:underline transition-colors ${
-                activePortal === 'advantage' ? 'font-bold text-[#E31B64] dark:text-rose-400' : ''
+                activePortal === 'advantage' ? 'font-bold text-[#AF1763] dark:text-[#e84c96]' : ''
               }`}
             >
               BlitzDeck
@@ -662,7 +660,7 @@ export function App() {
             <button
               onClick={() => handleSelectPortal('databoss')}
               className={`hover:underline transition-colors ${
-                activePortal === 'databoss' ? 'font-bold text-[#F37023] dark:text-amber-400' : ''
+                activePortal === 'databoss' ? 'font-bold text-[#0DCAF0]' : ''
               }`}
             >
               SiteSync

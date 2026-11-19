@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import type {
   OOHSite,
   OOHCategory,
@@ -687,14 +687,14 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-slate-950/70 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-4xl rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-auto transition-all flex flex-col max-h-[92vh]">
+      <div className="relative w-full max-w-4xl rounded-3xl bg-white dark:bg-[#191C24] border border-slate-200 dark:border-[#2C2E33] shadow-2xl overflow-hidden my-auto transition-all flex flex-col max-h-[92vh]">
         {/* Modal Top Bar */}
-        <div className="flex items-center justify-between p-4 sm:px-6 border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shrink-0">
+        <div className="flex items-center justify-between p-4 sm:px-6 border-b border-slate-200 dark:border-[#2C2E33] bg-white/95 dark:bg-[#191C24]/95 backdrop-blur-md shrink-0">
           <div>
             <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
               {mode === 'edit' ? (
                 <>
-                  Edit OOH Site: <span className="text-[#E31B64] font-mono">{siteToEdit?.uid}</span>
+                  Edit OOH Site: <span className="text-[#AF1763] font-mono">{siteToEdit?.uid}</span>
                 </>
               ) : mode === 'clone' ? (
                 <>Clone As New OOH Site</>
@@ -716,7 +716,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
         </div>
 
         {/* Multi-Section Tab Navigation */}
-        <div className="flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 px-4 sm:px-6 overflow-x-auto shrink-0">
+        <div className="flex border-b border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] px-4 sm:px-6 overflow-x-auto shrink-0">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -728,7 +728,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`py-3 px-3.5 sm:px-4 text-xs font-semibold flex items-center gap-2 border-b-2 transition-all whitespace-nowrap ${
                   isActive
-                    ? 'border-[#E31B64] text-[#E31B64] dark:text-[#F37023] bg-white dark:bg-slate-800 shadow-sm'
+                    ? 'border-[#AF1763] text-[#AF1763] dark:text-[#0DCAF0] bg-white dark:bg-slate-800 shadow-sm'
                     : 'border-transparent text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
                 } ${tab.error ? 'text-rose-500 dark:text-rose-400' : ''}`}
               >
@@ -746,10 +746,10 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
           {activeTab === 'basic' && (
             <div className="space-y-4 animate-fade-in">
               {/* DYNAMIC NOMENCLATURE SITE UID CARD */}
-              <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/40 space-y-3 shadow-xs">
+              <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200/80 dark:border-[#AF1763]/40 space-y-3 shadow-xs">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#E31B64] dark:text-[#F37023]" />
+                    <Sparkles className="w-4 h-4 text-[#AF1763] dark:text-[#0DCAF0]" />
                     <label className="text-xs font-bold text-slate-900 dark:text-white">
                       Hoarding Site UID (Standard Dynamic Nomenclature) <span className="text-rose-500">*</span>
                     </label>
@@ -767,7 +767,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <button
                       type="button"
                       onClick={handleRegenerateUid}
-                      className="text-[11px] text-[#E31B64] dark:text-[#F37023] hover:text-[#E31B64] dark:hover:text-[#F37023] hover:underline flex items-center gap-1 font-semibold"
+                      className="text-[11px] text-[#AF1763] dark:text-[#0DCAF0] hover:text-[#AF1763] dark:hover:text-[#0DCAF0] hover:underline flex items-center gap-1 font-semibold"
                       title="Re-sync with State, City, Pincode, Illumination, Size & Traffic formula"
                     >
                       <RefreshCw className="w-3 h-3" /> Re-sync Formula
@@ -783,7 +783,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     setIsUidManuallyEdited(true);
                   }}
                   placeholder="e.g. MAH-MUMB-0050-01-L-40X20-M"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-rose-300 dark:border-rose-800 bg-white dark:bg-slate-800 text-sm font-mono font-black text-rose-900 dark:text-rose-200 tracking-wide focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] shadow-xs"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-rose-300 dark:border-rose-800 bg-white dark:bg-slate-800 text-sm font-mono font-black text-rose-900 dark:text-rose-200 tracking-wide focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] shadow-xs"
                 />
                 {errors.uid && <p className="text-xs text-rose-500 mt-1">{errors.uid}</p>}
 
@@ -794,37 +794,37 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400">Live Dynamic Sync</span>
                   </div>
                   <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono">
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="1. First three alphabets of State Name">
-                      <span className="font-extrabold text-[#E31B64] dark:text-[#F37023]">{uidBreakdown.statePart}</span>
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="1. First three alphabets of State Name">
+                      <span className="font-extrabold text-[#AF1763] dark:text-[#0DCAF0]">{uidBreakdown.statePart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">1. State (3)</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="2. First four alphabets of City Name (dropdown dependent on State)">
-                      <span className="font-extrabold text-[#E31B64] dark:text-[#F37023]">{uidBreakdown.cityPart}</span>
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="2. First four alphabets of City Name (dropdown dependent on State)">
+                      <span className="font-extrabold text-[#AF1763] dark:text-[#0DCAF0]">{uidBreakdown.cityPart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">2. City (4)</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="3. Last 4 Digits of Pincode (from address / landmark)">
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="3. Last 4 Digits of Pincode (from address / landmark)">
                       <span className="font-extrabold text-blue-600 dark:text-blue-400">{uidBreakdown.pincodePart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">3. PIN (4)</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="4. Serial No of hoarding in particular Pincode Jurisdiction">
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="4. Serial No of hoarding in particular Pincode Jurisdiction">
                       <span className="font-extrabold text-amber-600 dark:text-amber-400">{uidBreakdown.serialPart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">4. Sr# (2)</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="5. First alphabet of Light/Non Light/Back Light/Digital (L/N/B/D)">
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="5. First alphabet of Light/Non Light/Back Light/Digital (L/N/B/D)">
                       <span className="font-extrabold text-purple-600 dark:text-purple-400">{uidBreakdown.illuminationPart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">5. Light</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="6. Size: Width in feet X Height in feet">
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="6. Size: Width in feet X Height in feet">
                       <span className="font-extrabold text-emerald-600 dark:text-emerald-400">{uidBreakdown.sizePart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">6. Size (W×H)</span>
                     </div>
                     <span className="text-slate-400 font-bold">-</span>
-                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col items-center shadow-2xs" title="7. First alphabet of Morning Traffic / Evening Traffic (M/E)">
+                    <div className="px-2 py-1 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-[#2C2E33] flex flex-col items-center shadow-2xs" title="7. First alphabet of Morning Traffic / Evening Traffic (M/E)">
                       <span className="font-extrabold text-rose-600 dark:text-rose-400">{uidBreakdown.trafficPart}</span>
                       <span className="text-[9px] font-sans text-slate-400 uppercase font-bold">7. Traffic</span>
                     </div>
@@ -841,7 +841,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as OOHCategory)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -855,7 +855,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 <div>
                   <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
                     <span>Pincode Serial No. (Segment 4)</span>
-                    <span className="text-[10px] text-[#E31B64] dark:text-[#F37023] font-mono font-bold">
+                    <span className="text-[10px] text-[#AF1763] dark:text-[#0DCAF0] font-mono font-bold">
                       Encoded: [{String(serialNo).padStart(2, '0')}]
                     </span>
                   </label>
@@ -865,7 +865,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     max={99}
                     value={serialNo}
                     onChange={(e) => setSerialNo(Math.max(1, parseInt(e.target.value, 10) || 1))}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] font-bold"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] font-bold"
                   />
                 </div>
               </div>
@@ -891,7 +891,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     className={`p-2.5 rounded-xl border text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                       trafficPeak === 'Morning Traffic'
                         ? 'bg-amber-500 text-white border-amber-500 shadow-sm'
-                        : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                        : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-[#2C2E33] hover:border-slate-300'
                     }`}
                   >
                     <span>☀️ Morning Traffic</span>
@@ -902,8 +902,8 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     onClick={() => setTrafficPeak('Evening Traffic')}
                     className={`p-2.5 rounded-xl border text-xs font-semibold flex items-center justify-center gap-2 transition-all ${
                       trafficPeak === 'Evening Traffic'
-                        ? 'bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white border-[#E31B64] shadow-sm'
-                        : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                        ? 'bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white border-[#AF1763] shadow-sm'
+                        : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-[#2C2E33] hover:border-slate-300'
                     }`}
                   >
                     <span>🌙 Evening Traffic</span>
@@ -922,16 +922,16 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   value={siteName}
                   onChange={(e) => setSiteName(e.target.value)}
                   placeholder="e.g. Bandra Reclamation Western Express Unipole A"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                 />
                 {errors.siteName && <p className="text-xs text-rose-500 mt-1">{errors.siteName}</p>}
               </div>
 
               {/* CLIENT CATEGORY WITH DYNAMIC ADD */}
-              <div className="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/40 space-y-3">
+              <div className="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-200/80 dark:border-[#AF1763]/40 space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Briefcase className="w-4 h-4 text-[#E31B64] dark:text-[#F37023]" />
+                    <Briefcase className="w-4 h-4 text-[#AF1763] dark:text-[#0DCAF0]" />
                     <label className="text-xs font-bold text-slate-900 dark:text-white">
                       Client Category / Industry Vertical
                     </label>
@@ -941,7 +941,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsAddingCategory(true)}
-                      className="text-xs font-semibold text-[#E31B64] dark:text-[#F37023] hover:text-[#E31B64] dark:hover:text-[#F37023] flex items-center gap-1 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-rose-200 dark:border-rose-800 shadow-sm transition-all"
+                      className="text-xs font-semibold text-[#AF1763] dark:text-[#0DCAF0] hover:text-[#AF1763] dark:hover:text-[#0DCAF0] flex items-center gap-1 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-rose-200 dark:border-rose-800 shadow-sm transition-all"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Add New Category</span>
@@ -966,13 +966,13 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         }
                       }}
                       placeholder="Type new category (e.g. Solar Energy, Edible Oils, Paints)..."
-                      className="flex-1 px-3 py-2 text-xs rounded-xl border border-rose-300 dark:border-rose-800 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30"
+                      className="flex-1 px-3 py-2 text-xs rounded-xl border border-rose-300 dark:border-rose-800 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30"
                       autoFocus
                     />
                     <button
                       type="button"
                       onClick={handleAddNewCategory}
-                      className="px-3 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white hover:brightness-105 shadow-sm flex items-center gap-1"
+                      className="px-3 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white hover:brightness-105 shadow-sm flex items-center gap-1"
                     >
                       <Check className="w-3.5 h-3.5" />
                       <span>Save & Select</span>
@@ -992,7 +992,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   <select
                     value={clientCategory}
                     onChange={(e) => setClientCategory(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                   >
                     <option value="">-- Select Client Industry Category --</option>
                     {clientCategories.map((cat) => (
@@ -1013,7 +1013,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   <select
                     value={status}
                     onChange={(e) => setStatus(e.target.value as SiteStatus)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                   >
                     {STATUSES.map((st) => (
                       <option key={st} value={st}>
@@ -1032,7 +1032,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     value={clientCurrentBrand}
                     onChange={(e) => setClientCurrentBrand(e.target.value)}
                     placeholder="e.g. Havells / Tanishq / Tata Copper (or leave blank)"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                 </div>
               </div>
@@ -1052,7 +1052,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   value={address}
                   onChange={(e) => handleAddressChange(e.target.value)}
                   placeholder="e.g. Near Sea Link Toll Plaza, Bandra West"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                 />
                 {errors.address && <p className="text-xs text-rose-500 mt-1">{errors.address}</p>}
               </div>
@@ -1067,14 +1067,14 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   value={landmark}
                   onChange={(e) => handleLandmarkChange(e.target.value)}
                   placeholder="e.g. Bandra-Worli Sea Link Approach & Western Express Highway Junction"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                 />
               </div>
 
               {/* Postal Code Real-time Derivation from Address & Landmark */}
               <div className="p-3.5 rounded-2xl bg-gradient-to-r from-rose-50/90 via-amber-50/50 to-orange-50/70 dark:from-rose-950/30 dark:via-amber-950/20 dark:to-orange-950/30 border border-rose-200/90 dark:border-rose-800/90 flex flex-wrap items-center justify-between gap-3 shadow-xs">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white shadow-xs">
+                  <div className="p-2 rounded-xl bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white shadow-xs">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
@@ -1082,7 +1082,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       <span className="text-xs font-bold text-slate-900 dark:text-white">
                         Postal Code:
                       </span>
-                      <span className="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 font-mono text-[#E31B64] dark:text-[#F37023] font-black text-sm border border-rose-200 dark:border-rose-800">
+                      <span className="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 font-mono text-[#AF1763] dark:text-[#0DCAF0] font-black text-sm border border-rose-200 dark:border-rose-800">
                         {pincode || '------'}
                       </span>
                       <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-900 dark:text-rose-200 font-bold">
@@ -1099,7 +1099,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 <button
                   type="button"
                   onClick={handleAutoDerivePincode}
-                  className="text-xs font-semibold text-[#E31B64] dark:text-[#F37023] hover:text-[#E31B64] dark:hover:text-[#F37023] flex items-center gap-1.5 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-xl border border-rose-200 dark:border-rose-800 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+                  className="text-xs font-semibold text-[#AF1763] dark:text-[#0DCAF0] hover:text-[#AF1763] dark:hover:text-[#0DCAF0] flex items-center gap-1.5 bg-white dark:bg-slate-800 px-3 py-1.5 rounded-xl border border-rose-200 dark:border-rose-800 shadow-2xs hover:shadow-xs transition-all cursor-pointer"
                   title="Re-evaluate postal code from landmark and address"
                 >
                   <RefreshCw className="w-3 h-3" />
@@ -1108,24 +1108,24 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
               </div>
 
               {/* Cascading State, District, City Selectors */}
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700 space-y-3">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-200/80 dark:border-[#2C2E33] space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Globe className="w-4 h-4 text-[#E31B64] dark:text-[#F37023]" />
+                    <Globe className="w-4 h-4 text-[#AF1763] dark:text-[#0DCAF0]" />
                     <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
                       Indian Geographic Hierarchy (State • District • City)
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     {tier && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-[#E31B64] dark:bg-rose-950/60 dark:text-[#F37023]">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-[#AF1763] dark:bg-rose-950/60 dark:text-[#0DCAF0]">
                         {tier} Market
                       </span>
                     )}
                     <button
                       type="button"
                       onClick={() => setIsCustomCity((prev) => !prev)}
-                      className="text-[11px] text-slate-500 hover:text-[#E31B64] dark:hover:text-[#F37023] underline"
+                      className="text-[11px] text-slate-500 hover:text-[#AF1763] dark:hover:text-[#0DCAF0] underline"
                     >
                       {isCustomCity ? '← Choose from Master List' : 'Enter Custom / Unlisted City'}
                     </button>
@@ -1141,7 +1141,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <select
                       value={state}
                       onChange={(e) => handleStateSelect(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                     >
                       <option value="">-- Select State / UT --</option>
                       {ALL_STATES.map((st) => (
@@ -1160,7 +1160,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <select
                       value={district}
                       onChange={(e) => handleDistrictSelect(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                     >
                       <option value="">-- Select District --</option>
                       {availableDistricts.length > 0
@@ -1198,13 +1198,13 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                           }
                         }}
                         placeholder="Type custom city..."
-                        className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-xs text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                       />
                     ) : (
                       <select
                         value={city}
                         onChange={(e) => handleCitySelect(e.target.value)}
-                        className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                        className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-xs font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                       >
                         <option value="">-- Select City / Town --</option>
                         {availableCities.length > 0 ? (
@@ -1229,7 +1229,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   <div>
                     <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-400 mb-1 flex items-center justify-between">
                       <span>Postal Pincode</span>
-                      <span className="text-[10px] text-[#E31B64] dark:text-[#F37023] font-mono font-bold">
+                      <span className="text-[10px] text-[#AF1763] dark:text-[#0DCAF0] font-mono font-bold">
                         UID: [{pincode ? pincode.replace(/\D/g, '').slice(-4).padStart(4, '0') : '0001'}]
                       </span>
                     </label>
@@ -1244,7 +1244,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         setPincodeDerivationInfo(val ? `Manually specified PIN ${val}` : 'PIN cleared');
                       }}
                       placeholder="e.g. 400050"
-                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-mono font-bold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-xs font-mono font-bold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                     />
                     <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1">
                       <span>Derived from Landmark & Address</span>
@@ -1252,7 +1252,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         <button
                           type="button"
                           onClick={handleAutoDerivePincode}
-                          className="text-[#E31B64] dark:text-[#F37023] hover:underline font-bold"
+                          className="text-[#AF1763] dark:text-[#0DCAF0] hover:underline font-bold"
                           title="Reset to postal code derived from address & landmark"
                         >
                           Auto-derive
@@ -1263,7 +1263,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 </div>
 
                 <p className="text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                  <Info className="w-3.5 h-3.5 text-[#E31B64] shrink-0" />
+                  <Info className="w-3.5 h-3.5 text-[#AF1763] shrink-0" />
                   <span>
                     Selecting a City automatically links its official State and District, and auto-derives its GPS centroid.
                   </span>
@@ -1271,10 +1271,10 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
               </div>
 
               {/* GPS Coordinates Section */}
-              <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 space-y-3">
+              <div className="p-4 rounded-2xl bg-white dark:bg-[#222631] border border-slate-200 dark:border-[#2C2E33] space-y-3">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5">
-                    <Compass className="w-4 h-4 text-[#E31B64] dark:text-[#F37023]" />
+                    <Compass className="w-4 h-4 text-[#AF1763] dark:text-[#0DCAF0]" />
                     <label className="text-xs font-bold text-slate-800 dark:text-slate-200">
                       Geographic GPS Coordinates (Latitude & Longitude)
                     </label>
@@ -1284,7 +1284,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <button
                       type="button"
                       onClick={handleAutoDeriveCoords}
-                      className="text-xs font-semibold text-[#E31B64] dark:text-[#F37023] hover:text-[#E31B64] dark:hover:text-[#F37023] flex items-center gap-1 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 rounded-lg border border-rose-200 dark:border-rose-800 shadow-sm transition-all"
+                      className="text-xs font-semibold text-[#AF1763] dark:text-[#0DCAF0] hover:text-[#AF1763] dark:hover:text-[#0DCAF0] flex items-center gap-1 bg-rose-50 dark:bg-rose-950/40 px-2.5 py-1 rounded-lg border border-rose-200 dark:border-rose-800 shadow-sm transition-all"
                       title="Recalculate coordinates from city and corridor address"
                     >
                       <RefreshCw className="w-3 h-3" />
@@ -1295,7 +1295,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       href={`https://maps.google.com/?q=${latitude},${longitude}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#E31B64] dark:hover:text-[#F37023] flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 transition-all"
+                      className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#AF1763] dark:hover:text-[#0DCAF0] flex items-center gap-1 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-[#2C2E33] transition-all"
                     >
                       <span>Preview Map</span>
                       <ExternalLink className="w-3 h-3" />
@@ -1314,7 +1314,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       value={latitude}
                       onChange={(e) => handleLatitudeChange(parseFloat(e.target.value) || 0)}
                       placeholder="19.0435"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                     />
                   </div>
 
@@ -1328,7 +1328,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       value={longitude}
                       onChange={(e) => handleLongitudeChange(parseFloat(e.target.value) || 0)}
                       placeholder="72.8258"
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-mono text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                     />
                   </div>
                 </div>
@@ -1364,7 +1364,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     min="1"
                     value={width}
                     onChange={(e) => setWidth(parseFloat(e.target.value) || 0)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                   {errors.width && <p className="text-xs text-rose-500 mt-1">{errors.width}</p>}
                 </div>
@@ -1378,7 +1378,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     min="1"
                     value={height}
                     onChange={(e) => setHeight(parseFloat(e.target.value) || 0)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-semibold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                   {errors.height && <p className="text-xs text-rose-500 mt-1">{errors.height}</p>}
                 </div>
@@ -1387,7 +1387,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">
                     Total Display Area
                   </label>
-                  <div className="px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-sm font-bold text-[#E31B64] dark:text-[#F37023] flex items-center gap-1.5">
+                  <div className="px-3.5 py-2.5 rounded-xl bg-slate-100 dark:bg-[#222631] border border-slate-200 dark:border-[#2C2E33] text-sm font-bold text-[#AF1763] dark:text-[#0DCAF0] flex items-center gap-1.5">
                     <Maximize2 className="w-4 h-4" />
                     <span>{totalSqFt.toLocaleString()} Sq. Ft.</span>
                   </div>
@@ -1399,10 +1399,10 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <span>Aspect Ratio</span>
                     <span className="text-[10px] font-mono text-slate-400">Dynamic</span>
                   </label>
-                  <div className="px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-1.5">
+                  <div className="px-3 py-2 rounded-xl bg-slate-100 dark:bg-[#222631] border border-slate-200 dark:border-[#2C2E33] flex items-center justify-between gap-1.5">
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <span className="text-sm font-extrabold text-[#E31B64] dark:text-[#F37023] font-mono">
+                        <span className="text-sm font-extrabold text-[#AF1763] dark:text-[#0DCAF0] font-mono">
                           {ratioInfo.ratioText}
                         </span>
                         <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">
@@ -1424,7 +1424,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
 
                     {/* Proportional Frame Visualizer */}
                     <div
-                      className="w-10 h-10 rounded-lg border border-rose-200 dark:border-rose-800 bg-white dark:bg-slate-900 flex items-center justify-center p-1 shrink-0"
+                      className="w-10 h-10 rounded-lg border border-rose-200 dark:border-rose-800 bg-white dark:bg-[#191C24] flex items-center justify-center p-1 shrink-0"
                       title={`Proportional visual render: ${width}ft x ${height}ft (${ratioInfo.ratioText})`}
                     >
                       <div
@@ -1438,7 +1438,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                               ? '100%'
                               : `${Math.max(25, (ratioInfo.heightRatio / ratioInfo.widthRatio) * 100)}%`,
                         }}
-                        className="bg-[#E31B64] dark:bg-[#F37023] rounded-sm shadow-xs transition-all duration-200"
+                        className="bg-[#AF1763] dark:bg-[#0DCAF0] rounded-sm shadow-xs transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -1448,7 +1448,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
               <div>
                 <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center justify-between">
                   <span>Illumination Type (UID Segment 5)</span>
-                  <span className="text-[10px] text-[#E31B64] dark:text-[#F37023] font-mono font-bold">
+                  <span className="text-[10px] text-[#AF1763] dark:text-[#0DCAF0] font-mono font-bold">
                     UID Code: [{getIlluminationCode(illumination)}]
                   </span>
                 </label>
@@ -1462,8 +1462,8 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         onClick={() => setIllumination(illum)}
                         className={`p-3 rounded-xl border text-xs font-semibold text-center transition-all flex flex-col items-center justify-center gap-1 ${
                           illumination === illum
-                            ? 'bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white border-[#E31B64] shadow-sm'
-                            : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                            ? 'bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white border-[#AF1763] shadow-sm'
+                            : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-[#2C2E33] hover:border-slate-300'
                         }`}
                       >
                         <span>{illum}</span>
@@ -1492,7 +1492,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     value={trafficFootfall}
                     onChange={(e) => setTrafficFootfall(e.target.value)}
                     placeholder="e.g. 220,000 vehicles/day"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                 </div>
 
@@ -1505,7 +1505,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     value={facingDirection}
                     onChange={(e) => setFacingDirection(e.target.value)}
                     placeholder="e.g. Traffic towards South Mumbai"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                 </div>
               </div>
@@ -1531,17 +1531,17 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     value={ratePerMonth}
                     onChange={(e) => setRatePerMonth(parseFloat(e.target.value) || 0)}
                     placeholder="350000"
-                    className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-base font-extrabold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                    className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-base font-extrabold text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                   />
                 </div>
                 {errors.ratePerMonth && <p className="text-xs text-rose-500 mt-1">{errors.ratePerMonth}</p>}
               </div>
 
               {/* SITE VENDOR DETAILS WITH AUTO-SAVE & DYNAMIC LIST */}
-              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-3">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-200 dark:border-[#2C2E33] space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5">
-                    <Building2 className="w-4 h-4 text-[#E31B64] dark:text-[#F37023]" />
+                    <Building2 className="w-4 h-4 text-[#AF1763] dark:text-[#0DCAF0]" />
                     <label className="text-xs font-bold text-slate-900 dark:text-white">
                       Site Concessionaire / Owning Vendor
                     </label>
@@ -1551,7 +1551,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsAddingVendor(true)}
-                      className="text-xs font-semibold text-[#E31B64] dark:text-[#F37023] hover:text-[#E31B64] dark:hover:text-[#F37023] flex items-center gap-1 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-700 shadow-sm transition-all"
+                      className="text-xs font-semibold text-[#AF1763] dark:text-[#0DCAF0] hover:text-[#AF1763] dark:hover:text-[#0DCAF0] flex items-center gap-1 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-[#2C2E33] shadow-sm transition-all"
                     >
                       <Plus className="w-3.5 h-3.5" />
                       <span>Add New Vendor</span>
@@ -1564,7 +1564,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 </p>
 
                 {isAddingVendor ? (
-                  <div className="space-y-2 p-3 rounded-xl bg-white dark:bg-slate-900 border border-rose-200 dark:border-rose-800 animate-fade-in">
+                  <div className="space-y-2 p-3 rounded-xl bg-white dark:bg-[#191C24] border border-rose-200 dark:border-rose-800 animate-fade-in">
                     <div>
                       <label className="block text-[11px] font-bold text-slate-600 dark:text-slate-300 mb-1">
                         Vendor / Agency Company Name:
@@ -1574,7 +1574,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         value={newVendorName}
                         onChange={(e) => setNewVendorName(e.target.value)}
                         placeholder="e.g. Apex Outdoor Advertising / Pioneer Media"
-                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                        className="w-full px-3 py-2 text-xs rounded-lg border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800"
                         autoFocus
                       />
                     </div>
@@ -1588,7 +1588,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                           value={newVendorContact}
                           onChange={(e) => setNewVendorContact(e.target.value)}
                           placeholder="e.g. Rahul Sharma"
-                          className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                          className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800"
                         />
                       </div>
                       <div>
@@ -1600,7 +1600,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                           value={newVendorPhone}
                           onChange={(e) => setNewVendorPhone(e.target.value)}
                           placeholder="+91 98200 XXXXX / sales@vendor.com"
-                          className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800"
+                          className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800"
                         />
                       </div>
                     </div>
@@ -1618,7 +1618,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       <button
                         type="button"
                         onClick={handleAddNewVendor}
-                        className="px-3 py-1.5 text-xs font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white rounded-lg hover:brightness-105 shadow-sm flex items-center gap-1"
+                        className="px-3 py-1.5 text-xs font-bold bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white rounded-lg hover:brightness-105 shadow-sm flex items-center gap-1"
                       >
                         <Check className="w-3.5 h-3.5" />
                         <span>Save Vendor to List</span>
@@ -1631,7 +1631,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       <select
                         value={vendorName}
                         onChange={(e) => handleVendorSelect(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] cursor-pointer"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm font-medium text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763] cursor-pointer"
                       >
                         <option value="">-- Select Owning Vendor --</option>
                         {vendors.map((v) => (
@@ -1648,7 +1648,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         value={vendorContact}
                         onChange={(e) => setVendorContact(e.target.value)}
                         placeholder="Vendor Contact Info (Phone / Desk / Lead)"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30"
                       />
                     </div>
                   </div>
@@ -1665,7 +1665,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="e.g. Prime corridor with uninterrupted 300m visibility. Guarantees 6-8 minutes dwell time during evening peak hours."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64]"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-[#AF1763]/30 focus:border-[#AF1763]"
                 />
               </div>
             </div>
@@ -1684,8 +1684,8 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                 onClick={() => fileInputRef.current?.click()}
                 className={`border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all ${
                   isDragging
-                    ? 'border-[#E31B64] bg-rose-50/50 dark:bg-rose-950/20'
-                    : 'border-slate-300 dark:border-slate-700 hover:border-[#E31B64] bg-slate-50/50 dark:bg-slate-800/40'
+                    ? 'border-[#AF1763] bg-rose-50/50 dark:bg-rose-950/20'
+                    : 'border-slate-300 dark:border-[#2C2E33] hover:border-[#AF1763] bg-slate-50/50 dark:bg-slate-800/40'
                 }`}
               >
                 <input
@@ -1696,7 +1696,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   accept="image/*"
                   className="hidden"
                 />
-                <div className="w-12 h-12 rounded-full bg-rose-100 dark:bg-rose-950/80 text-[#E31B64] dark:text-[#F37023] flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 rounded-full bg-rose-100 dark:bg-rose-950/80 text-[#AF1763] dark:text-[#0DCAF0] flex items-center justify-center mx-auto mb-3">
                   <Upload className="w-6 h-6" />
                 </div>
                 <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">
@@ -1728,7 +1728,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                       key={idx}
                       type="button"
                       onClick={() => handleAddBundledAsset(asset)}
-                      className="flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:border-[#E31B64] text-left transition-colors"
+                      className="flex items-center gap-2 p-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 hover:border-[#AF1763] text-left transition-colors"
                     >
                       <img
                         src={asset.url}
@@ -1739,7 +1739,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                         <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 truncate">
                           {asset.name}
                         </p>
-                        <span className="text-[10px] text-[#E31B64] dark:text-[#F37023]">
+                        <span className="text-[10px] text-[#AF1763] dark:text-[#0DCAF0]">
                           +{asset.angle}
                         </span>
                       </div>
@@ -1758,17 +1758,17 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   {photos.map((photo) => (
                     <div
                       key={photo.id}
-                      className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/80 shadow-sm"
+                      className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3 rounded-2xl border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-[#222631] shadow-sm"
                     >
                       <div className="flex items-center gap-3 w-full sm:w-auto">
-                        <div className="relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border border-slate-200 dark:border-slate-700">
+                        <div className="relative w-20 h-14 rounded-xl overflow-hidden shrink-0 border border-slate-200 dark:border-[#2C2E33]">
                           <img
                             src={photo.url}
                             alt={photo.caption}
                             className="w-full h-full object-cover"
                           />
                           {photo.is_primary && (
-                            <span className="absolute top-1 left-1 px-1 rounded bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white text-[9px] font-bold">
+                            <span className="absolute top-1 left-1 px-1 rounded bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white text-[9px] font-bold">
                               Primary
                             </span>
                           )}
@@ -1780,13 +1780,13 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                             value={photo.caption}
                             onChange={(e) => handlePhotoCaptionChange(photo.id, e.target.value)}
                             placeholder="Caption (e.g. Frontal Arterial View)"
-                            className="w-full px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200"
+                            className="w-full px-2.5 py-1 text-xs rounded-lg border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#191C24] text-slate-800 dark:text-slate-200"
                           />
                           <div className="flex items-center gap-2 mt-1">
                             <select
                               value={photo.angle || 'Day Shot'}
                               onChange={(e) => handlePhotoAngleChange(photo.id, e.target.value as PhotoAngle)}
-                              className="text-[11px] px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300"
+                              className="text-[11px] px-2 py-0.5 rounded border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#191C24] text-slate-700 dark:text-slate-300"
                             >
                               {PHOTO_ANGLES.map((angle) => (
                                 <option key={angle} value={angle}>
@@ -1831,7 +1831,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
         </form>
 
         {/* Modal Bottom Actions Bar */}
-        <div className="flex items-center justify-between p-4 sm:px-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 shrink-0">
+        <div className="flex items-center justify-between p-4 sm:px-6 border-t border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#222631] shrink-0">
           <div className="flex items-center gap-2 text-xs text-slate-500">
             {activeTab !== 'basic' && (
               <button
@@ -1840,7 +1840,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
                   const idx = tabs.findIndex((t) => t.id === activeTab);
                   if (idx > 0) setActiveTab(tabs[idx - 1].id as any);
                 }}
-                className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 font-medium hover:bg-slate-100"
+                className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-[#2C2E33] bg-white dark:bg-slate-800 font-medium hover:bg-slate-100"
               >
                 Back
               </button>
@@ -1870,7 +1870,7 @@ export const SiteFormModal: React.FC<SiteFormModalProps> = ({
             <button
               type="button"
               onClick={handleSubmit}
-              className="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] hover:brightness-105 text-white shadow-md shadow-[#E31B64]/25 transition-all flex items-center gap-1.5"
+              className="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] hover:brightness-105 text-white shadow-md shadow-[#AF1763]/25 transition-all flex items-center gap-1.5"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>{mode === 'edit' ? 'Update Site' : 'Save Site to Inventory'}</span>

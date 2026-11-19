@@ -18,11 +18,11 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
     activeCity === 'All' ? sites : sites.filter((s) => s.location.city === activeCity);
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-colors mb-6">
+    <div className="bg-white dark:bg-[#191C24] rounded-2xl border border-slate-200 dark:border-[#2C2E33] shadow-sm overflow-hidden transition-colors mb-6">
       {/* City Switcher Tabs */}
-      <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 bg-slate-50/70 dark:bg-slate-800/40">
+      <div className="p-4 border-b border-slate-200 dark:border-[#2C2E33] flex flex-wrap items-center justify-between gap-3 bg-slate-50/70 dark:bg-slate-800/40">
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-[#E31B64]" />
+          <MapPin className="w-4 h-4 text-[#AF1763]" />
           <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
             Interactive Spatial Corridors:
           </span>
@@ -38,8 +38,8 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
               }}
               className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
                 activeCity === city
-                  ? 'bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white shadow-sm'
-                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700'
+                  ? 'bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white shadow-sm'
+                  : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-[#2C2E33]'
               }`}
             >
               {city}
@@ -53,13 +53,13 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
         <div className="lg:col-span-2 relative bg-slate-950 p-6 flex flex-col justify-between overflow-hidden">
           {/* Subtle Grid Map Background */}
           <div
-            className="absolute inset-0 opacity-20 bg-[radial-gradient(#E31B64_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"
+            className="absolute inset-0 opacity-20 bg-[radial-gradient(#AF1763_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"
           />
 
           {/* Map Header */}
           <div className="relative z-10 flex items-center justify-between text-white mb-6">
             <div>
-              <span className="text-[11px] font-mono text-[#F37023] font-semibold uppercase tracking-wider">
+              <span className="text-[11px] font-mono text-[#0DCAF0] font-semibold uppercase tracking-wider">
                 Geographic Dispersion
               </span>
               <h4 className="text-base font-bold">
@@ -82,7 +82,7 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
                   onClick={() => setSelectedSite(site)}
                   className={`p-3.5 rounded-xl border text-left transition-all backdrop-blur-md ${
                     isSelected
-                      ? 'bg-[#E31B64]/20 border-[#E31B64] ring-2 ring-[#E31B64]/30 text-white shadow-lg -translate-y-0.5'
+                      ? 'bg-[#AF1763]/20 border-[#AF1763] ring-2 ring-[#AF1763]/30 text-white shadow-lg -translate-y-0.5'
                       : 'bg-slate-900/70 border-slate-800 hover:border-slate-700 text-slate-300 hover:bg-slate-800/80'
                   }`}
                 >
@@ -127,16 +127,16 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
         </div>
 
         {/* Right Col: Selected Site Geo Dossier Panel */}
-        <div className="p-6 bg-white dark:bg-slate-900 flex flex-col justify-between">
+        <div className="p-6 bg-white dark:bg-[#191C24] flex flex-col justify-between">
           {selectedSite ? (
             <div>
-              <div className="relative aspect-video rounded-xl overflow-hidden mb-4 border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+              <div className="relative aspect-video rounded-xl overflow-hidden mb-4 border border-slate-200 dark:border-[#2C2E33] bg-slate-100 dark:bg-slate-800">
                 <img
                   src={selectedSite.photographs[0]?.url || 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80'}
                   alt={selectedSite.site_name}
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-2 left-2 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white">
+                <span className="absolute top-2 left-2 px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white">
                   {selectedSite.uid}
                 </span>
                 <span className="absolute top-2 right-2 px-2 py-0.5 rounded text-[10px] font-bold bg-black/60 backdrop-blur-sm text-white">
@@ -148,7 +148,7 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
                 {selectedSite.site_name}
               </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex items-start gap-1">
-                <MapPin className="w-3.5 h-3.5 text-[#E31B64] shrink-0 mt-0.5" />
+                <MapPin className="w-3.5 h-3.5 text-[#AF1763] shrink-0 mt-0.5" />
                 <span>
                   {selectedSite.location.address}, {selectedSite.location.city},{' '}
                   {selectedSite.location.state}
@@ -156,7 +156,7 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
               </p>
 
               {/* Geo Specs List */}
-              <div className="space-y-2 mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
+              <div className="space-y-2 mt-4 pt-3 border-t border-slate-100 dark:border-[#2C2E33] text-xs">
                 <div className="flex justify-between">
                   <span className="text-slate-400">Coordinates:</span>
                   <span className="font-mono font-medium text-slate-700 dark:text-slate-300">
@@ -166,7 +166,7 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
                 <div className="flex justify-between">
                   <span className="text-slate-400">Display Surface:</span>
                   <span className="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1">
-                    <Maximize2 className="w-3 h-3 text-[#E31B64]" />
+                    <Maximize2 className="w-3 h-3 text-[#AF1763]" />
                     {selectedSite.dimensions.width}' × {selectedSite.dimensions.height}' ({selectedSite.dimensions.total_sq_ft} sq ft)
                   </span>
                 </div>
@@ -179,7 +179,7 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-400">Monthly Commercial:</span>
-                  <span className="font-extrabold text-[#E31B64] dark:text-[#F37023]">
+                  <span className="font-extrabold text-[#AF1763] dark:text-[#0DCAF0]">
                     {formatINR(selectedSite.rate_per_month)}
                   </span>
                 </div>
@@ -200,14 +200,14 @@ export const SiteMapView: React.FC<SiteMapViewProps> = ({ sites, onViewDetails }
                   }
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-2 rounded-xl text-xs font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
+                  className="px-3 py-2 rounded-xl text-xs font-semibold border border-slate-200 dark:border-[#2C2E33] hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                   <span>Google Maps</span>
                 </a>
                 <button
                   onClick={() => onViewDetails(selectedSite)}
-                  className="px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-[#E31B64] to-[#F37023] hover:brightness-105 text-white flex items-center justify-center gap-1.5 shadow-sm transition-all"
+                  className="px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] hover:brightness-105 text-white flex items-center justify-center gap-1.5 shadow-sm transition-all"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   <span>Full Dossier</span>

@@ -8,7 +8,7 @@ interface LogoProps {
 }
 
 /**
- * Geometric OOH Suite emblem motif (replacing legacy agency emblem)
+ * Geometric OOH Suite emblem motif
  */
 export const InterspaceMotif: React.FC<{
   className?: string;
@@ -27,9 +27,8 @@ export const InterspaceMotif: React.FC<{
     >
       <defs>
         <linearGradient id="suiteBrandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#E31B64" />
-          <stop offset="50%" stopColor="#E63946" />
-          <stop offset="100%" stopColor="#F37023" />
+          <stop offset="0%" stopColor="#AF1763" />
+          <stop offset="100%" stopColor="#0D6EFD" />
         </linearGradient>
       </defs>
       <rect
@@ -79,17 +78,17 @@ export const InterspaceLogo: React.FC<LogoProps> = ({
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       <div
-        className={`${iconBox} bg-gradient-to-tr from-[#E31B64] via-[#E63946] to-[#F37023] text-white flex items-center justify-center shadow-md shadow-rose-500/20 shrink-0`}
+        className={`${iconBox} bg-gradient-to-tr from-[#AF1763] to-[#d63384] text-white flex items-center justify-center shadow-md shadow-[#AF1763]/30 shrink-0`}
       >
         <Layers className="w-1/2 h-1/2 stroke-[2.5]" />
       </div>
       <div className="flex items-center gap-1.5">
         <span className={`font-black tracking-tight text-slate-900 dark:text-white ${textSize}`}>
-          Blitz<span className="bg-gradient-to-r from-[#E31B64] to-[#F37023] bg-clip-text text-transparent">Deck</span>
+          Blitz<span className="text-[#AF1763] dark:text-[#e84c96]">Deck</span>
         </span>
-        <span className="text-slate-300 dark:text-slate-600 font-light">/</span>
+        <span className="text-slate-300 dark:text-[#2C2E33] font-light">/</span>
         <span className={`font-black tracking-tight text-slate-900 dark:text-white ${textSize}`}>
-          Site<span className="bg-gradient-to-r from-[#F37023] to-[#E31B64] bg-clip-text text-transparent">Sync</span>
+          Site<span className="text-[#0DCAF0]">Sync</span>
         </span>
       </div>
     </div>
@@ -107,9 +106,9 @@ export const InterspaceAdvantageLogo: React.FC<{
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="relative group shrink-0">
-        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#E31B64] via-[#E63946] to-[#F37023] p-[2px] shadow-lg shadow-rose-500/20">
-          <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
-            <Zap className="w-5 h-5 text-[#E31B64] fill-[#E31B64]/15 stroke-[2.4]" />
+        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#AF1763] to-[#d63384] p-[2px] shadow-lg shadow-[#AF1763]/25">
+          <div className="w-full h-full rounded-[14px] bg-white dark:bg-[#191C24] flex items-center justify-center overflow-hidden">
+            <Zap className="w-5 h-5 text-[#AF1763] dark:text-[#e84c96] fill-[#AF1763]/20 stroke-[2.4]" />
           </div>
         </div>
       </div>
@@ -119,10 +118,10 @@ export const InterspaceAdvantageLogo: React.FC<{
           <span className="font-extrabold text-base sm:text-xl tracking-tight text-slate-900 dark:text-white">
             BLITZ
           </span>
-          <span className="font-black text-base sm:text-xl tracking-tight bg-gradient-to-r from-[#E31B64] to-[#F37023] bg-clip-text text-transparent -ml-1.5">
+          <span className="font-black text-base sm:text-xl tracking-tight text-[#AF1763] dark:text-[#e84c96] -ml-1.5">
             DECK
           </span>
-          <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-rose-50 text-[#E31B64] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/60 dark:border-rose-900/40">
+          <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#AF1763]/10 text-[#AF1763] dark:bg-[#AF1763]/20 dark:text-[#f472b6] border border-[#AF1763]/30">
             Planning & Retrieval
           </span>
         </div>
@@ -148,9 +147,9 @@ export const InterspaceDataBossLogo: React.FC<{
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <div className="relative group shrink-0">
-        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#F37023] via-[#E63946] to-[#E31B64] p-[2px] shadow-lg shadow-orange-500/20">
-          <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
-            <RefreshCw className="w-5 h-5 text-[#F37023] stroke-[2.4]" />
+        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-[#0D6EFD] to-[#0DCAF0] p-[2px] shadow-lg shadow-[#0DCAF0]/20">
+          <div className="w-full h-full rounded-[14px] bg-white dark:bg-[#191C24] flex items-center justify-center overflow-hidden">
+            <RefreshCw className="w-5 h-5 text-[#0DCAF0] stroke-[2.4]" />
           </div>
         </div>
       </div>
@@ -160,10 +159,10 @@ export const InterspaceDataBossLogo: React.FC<{
           <span className="font-extrabold text-base sm:text-xl tracking-tight text-slate-900 dark:text-white">
             SITE
           </span>
-          <span className="font-black text-base sm:text-xl tracking-tight bg-gradient-to-r from-[#F37023] to-[#E31B64] bg-clip-text text-transparent -ml-1.5">
+          <span className="font-black text-base sm:text-xl tracking-tight text-[#0DCAF0] -ml-1.5">
             SYNC
           </span>
-          <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-amber-50 text-[#F37023] dark:bg-amber-950/60 dark:text-amber-300 border border-amber-200/60 dark:border-amber-900/40">
+          <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#0DCAF0]/10 text-[#0aa2c0] dark:bg-[#0DCAF0]/15 dark:text-[#0DCAF0] border border-[#0DCAF0]/30">
             Master Data Vault
           </span>
         </div>
@@ -195,8 +194,8 @@ export const SubtleBrandWatermark: React.FC<{ className?: string }> = ({ classNa
           patternUnits="userSpaceOnUse"
           patternTransform="rotate(-25)"
         >
-          <rect x="20" y="20" width="30" height="80" rx="15" fill="#E31B64" />
-          <rect x="70" y="50" width="30" height="90" rx="15" fill="#F37023" />
+          <rect x="20" y="20" width="30" height="80" rx="15" fill="#AF1763" />
+          <rect x="70" y="50" width="30" height="90" rx="15" fill="#0D6EFD" />
         </pattern>
         <rect width="100%" height="100%" fill="url(#suiteBrandPattern)" />
       </svg>

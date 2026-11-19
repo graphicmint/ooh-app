@@ -84,10 +84,10 @@ export const SiteCard: React.FC<SiteCardProps> = ({
 
   return (
     <div
-      className={`group relative flex flex-col rounded-2xl bg-white dark:bg-slate-900 border transition-all duration-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 ${
+      className={`group relative flex flex-col rounded-2xl bg-white dark:bg-[#191C24] border transition-all duration-200 overflow-hidden hover:shadow-xl hover:-translate-y-1 ${
         isSelected
-          ? 'border-[#E31B64] ring-2 ring-[#E31B64]/20 shadow-md'
-          : 'border-slate-200/90 dark:border-slate-800/90 hover:border-rose-200 dark:hover:border-rose-950/60'
+          ? 'border-[#AF1763] ring-2 ring-[#AF1763]/20 shadow-md'
+          : 'border-slate-200/90 dark:border-[#2C2E33]/90 hover:border-rose-200 dark:hover:border-[#AF1763]/60'
       }`}
     >
       {/* Top Media Frame */}
@@ -117,7 +117,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
           }}
           className={`absolute top-3 left-3 z-10 w-6 h-6 rounded-lg flex items-center justify-center transition-all ${
             isSelected
-              ? 'bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white shadow-md'
+              ? 'bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white shadow-md'
               : 'bg-black/40 hover:bg-black/60 text-white/70 hover:text-white backdrop-blur-sm border border-white/20'
           }`}
           title={isSelected ? 'Deselect site' : 'Select site for export'}
@@ -132,7 +132,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
               className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/70 backdrop-blur-md text-amber-300 border border-amber-400/40 flex items-center gap-1 shadow-sm"
               title={`${campaigns.length} client campaigns consolidated under this UID card`}
             >
-              <Megaphone className="w-2.5 h-2.5 text-[#F37023]" />
+              <Megaphone className="w-2.5 h-2.5 text-[#0DCAF0]" />
               <span>{campaigns.length} Campaigns</span>
             </span>
           )}
@@ -148,7 +148,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
 
         {/* Bottom Photo Badges */}
         <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-white">
-          <span className="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-gradient-to-r from-[#E31B64]/90 to-[#F37023]/90 backdrop-blur-sm tracking-wide shadow-sm">
+          <span className="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-gradient-to-r from-[#AF1763]/90 to-[#0DCAF0]/90 backdrop-blur-sm tracking-wide shadow-sm">
             {site.uid}
           </span>
 
@@ -182,7 +182,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
       <div className="flex flex-1 flex-col p-4 sm:p-5">
         {/* Category & Illumination Pills */}
         <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-[11px] font-semibold text-[#E31B64] dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2.5 py-0.5 rounded-md border border-rose-200/50">
+          <span className="text-[11px] font-semibold text-[#AF1763] dark:text-rose-400 bg-rose-50 dark:bg-rose-950/60 px-2.5 py-0.5 rounded-md border border-rose-200/50">
             {site.category}
           </span>
           <span className="text-[11px] font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1">
@@ -194,7 +194,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
         {/* Site Name */}
         <h3
           onClick={() => onViewDetails(site)}
-          className="text-base font-bold text-slate-900 dark:text-white line-clamp-1 hover:text-[#E31B64] dark:hover:text-rose-400 cursor-pointer transition-colors"
+          className="text-base font-bold text-slate-900 dark:text-white line-clamp-1 hover:text-[#AF1763] dark:hover:text-rose-400 cursor-pointer transition-colors"
           title={site.site_name}
         >
           {site.site_name}
@@ -213,10 +213,10 @@ export const SiteCard: React.FC<SiteCardProps> = ({
 
         {/* Multi-Campaign Interactive Switcher Bar (when multiple campaigns are grouped under this UID) */}
         {campaigns.length > 1 && (
-          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-[#2C2E33]">
             <div className="flex items-center justify-between gap-1 mb-1.5">
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                <Megaphone className="w-3 h-3 text-[#E31B64]" />
+                <Megaphone className="w-3 h-3 text-[#AF1763]" />
                 <span>Grouped Campaigns ({campaigns.length})</span>
               </span>
               {onAddCampaign && (
@@ -226,7 +226,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
                     e.stopPropagation();
                     onAddCampaign(site.uid);
                   }}
-                  className="text-[10px] font-bold text-[#E31B64] hover:text-[#F37023] flex items-center gap-0.5 transition-colors cursor-pointer"
+                  className="text-[10px] font-bold text-[#AF1763] hover:text-[#0DCAF0] flex items-center gap-0.5 transition-colors cursor-pointer"
                   title="Add new campaign to this site"
                 >
                   <span>+ Add Campaign</span>
@@ -247,8 +247,8 @@ export const SiteCard: React.FC<SiteCardProps> = ({
                     }}
                     className={`px-2 py-0.5 rounded-md text-[10px] font-semibold transition-all shrink-0 flex items-center gap-1 cursor-pointer ${
                       isSelectedCamp
-                        ? 'bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white shadow-xs'
-                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700'
+                        ? 'bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white shadow-xs'
+                        : 'bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 border border-slate-200 dark:border-[#2C2E33]'
                     }`}
                     title={`Client: ${camp.client_name} | Category: ${camp.client_category}`}
                   >
@@ -269,20 +269,20 @@ export const SiteCard: React.FC<SiteCardProps> = ({
         <div className="flex flex-wrap items-center gap-1.5 mt-2.5 text-[11px]">
           {displayedBrand && (
             <span
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-bold bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/60 dark:to-orange-950/40 text-[#E31B64] dark:text-rose-300 border border-rose-200/60 max-w-[220px] truncate"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-bold bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/60 dark:to-orange-950/40 text-[#AF1763] dark:text-rose-300 border border-rose-200/60 max-w-[220px] truncate"
               title={`Advertiser Brand: ${displayedBrand}`}
             >
-              <Megaphone className="w-3 h-3 text-[#E31B64] shrink-0" />
+              <Megaphone className="w-3 h-3 text-[#AF1763] shrink-0" />
               <span className="truncate">{displayedBrand}</span>
             </span>
           )}
 
           {displayedCategory && (
             <span
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-semibold bg-rose-50 text-[#E31B64] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-semibold bg-rose-50 text-[#AF1763] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50"
               title="Client Industry Category"
             >
-              <Briefcase className="w-3 h-3 text-[#E31B64]" />
+              <Briefcase className="w-3 h-3 text-[#AF1763]" />
               <span>{displayedCategory}</span>
             </span>
           )}
@@ -298,7 +298,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
 
           {site.vendor_name && (
             <span
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700 truncate max-w-[180px]"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-[#2C2E33] truncate max-w-[180px]"
               title={`Site Concessionaire: ${site.vendor_name}`}
             >
               <Building2 className="w-3 h-3 text-slate-400 shrink-0" />
@@ -308,7 +308,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
         </div>
 
         {/* Technical Specs Metric Bar */}
-        <div className="grid grid-cols-2 gap-2 my-3 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-xs">
+        <div className="grid grid-cols-2 gap-2 my-3 p-2.5 rounded-xl bg-slate-50 dark:bg-[#0F1117] border border-slate-100 dark:border-[#2C2E33] text-xs">
           <div>
             <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider block">
               Dimensions & Ratio
@@ -316,7 +316,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
             <span className="font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-1.5 flex-wrap">
               <span>{site.dimensions.width}ft × {site.dimensions.height}ft</span>
               {site.dimensions.aspect_ratio && (
-                <span className="text-[10px] px-1.5 py-0.2 rounded bg-orange-50 dark:bg-orange-950/60 text-[#F37023] dark:text-amber-300 font-mono font-bold">
+                <span className="text-[10px] px-1.5 py-0.2 rounded bg-orange-50 dark:bg-orange-950/60 text-[#0DCAF0] dark:text-amber-300 font-mono font-bold">
                   {site.dimensions.aspect_ratio}
                 </span>
               )}
@@ -326,7 +326,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
             <span className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider block">
               Total Area
             </span>
-            <span className="font-semibold text-[#E31B64] dark:text-rose-400 flex items-center gap-1">
+            <span className="font-semibold text-[#AF1763] dark:text-rose-400 flex items-center gap-1">
               <Maximize2 className="w-3 h-3" />
               {site.dimensions.total_sq_ft.toLocaleString()} sq ft
             </span>
@@ -334,7 +334,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
         </div>
 
         {/* Commercial Rate & Action Footer */}
-        <div className="mt-auto pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+        <div className="mt-auto pt-3 border-t border-slate-100 dark:border-[#2C2E33] flex items-center justify-between">
           <div>
             <span className="text-[10px] font-medium text-slate-400 block uppercase">
               Rate / Month
@@ -348,7 +348,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
             {onAddCampaign && (
               <button
                 onClick={() => onAddCampaign(site.uid)}
-                className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
                 title="Log New Campaign Under this UID"
               >
                 <Megaphone className="w-4 h-4" />
@@ -356,14 +356,14 @@ export const SiteCard: React.FC<SiteCardProps> = ({
             )}
             <button
               onClick={() => onQuickPptExport(site)}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
               title="Generate single PPTX slide for this site"
             >
               <Presentation className="w-4 h-4" />
             </button>
             <button
               onClick={() => onEditSite(site)}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
               title="Edit Site Details"
             >
               <Edit2 className="w-4 h-4" />
@@ -377,7 +377,7 @@ export const SiteCard: React.FC<SiteCardProps> = ({
             </button>
             <button
               onClick={() => onViewDetails(site)}
-              className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:bg-[#E31B64] dark:hover:bg-[#E31B64] dark:hover:text-white transition-colors flex items-center gap-1 ml-1"
+              className="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:bg-[#AF1763] dark:hover:bg-[#AF1763] dark:hover:text-white transition-colors flex items-center gap-1 ml-1"
             >
               <Eye className="w-3.5 h-3.5" />
               <span>View</span>

@@ -65,11 +65,11 @@ export const SiteTable: React.FC<SiteTableProps> = ({
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden transition-colors">
+    <div className="bg-white dark:bg-[#191C24] rounded-2xl border border-slate-200 dark:border-[#2C2E33] shadow-sm overflow-hidden transition-colors">
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs">
           {/* Table Header */}
-          <thead className="bg-slate-50 dark:bg-slate-800/80 text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-200 dark:border-slate-800">
+          <thead className="bg-slate-50 dark:bg-[#222631] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-200 dark:border-[#2C2E33]">
             <tr>
               <th className="p-4 w-10">
                 <button
@@ -77,9 +77,9 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                   onClick={onSelectAll}
                   className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
                     allSelected
-                      ? 'bg-[#E31B64] border-[#E31B64] text-white'
+                      ? 'bg-[#AF1763] border-[#AF1763] text-white'
                       : someSelected
-                      ? 'bg-rose-100 border-[#E31B64] text-[#E31B64]'
+                      ? 'bg-rose-100 border-[#AF1763] text-[#AF1763]'
                       : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700'
                   }`}
                   title="Select / Deselect All"
@@ -124,7 +124,7 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                       onClick={() => onToggleSelect(site.uid)}
                       className={`w-5 h-5 rounded flex items-center justify-center border transition-all ${
                         isSelected
-                          ? 'bg-[#E31B64] border-[#E31B64] text-white'
+                          ? 'bg-[#AF1763] border-[#AF1763] text-white'
                           : 'border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700'
                       }`}
                     >
@@ -137,7 +137,7 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                     <div className="flex items-center gap-3">
                       <div
                         onClick={() => onViewDetails(site)}
-                        className="relative w-14 h-11 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 cursor-pointer border border-slate-200 dark:border-slate-700 group"
+                        className="relative w-14 h-11 rounded-lg overflow-hidden shrink-0 bg-slate-100 dark:bg-slate-800 cursor-pointer border border-slate-200 dark:border-[#2C2E33] group"
                       >
                         <img
                           src={primaryPhoto.url}
@@ -154,26 +154,26 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-mono font-bold text-xs text-[#E31B64] dark:text-rose-400">
+                          <span className="font-mono font-bold text-xs text-[#AF1763] dark:text-rose-400">
                             {site.uid}
                           </span>
                         </div>
                         <h4
                           onClick={() => onViewDetails(site)}
-                          className="font-bold text-slate-900 dark:text-white line-clamp-1 hover:text-[#E31B64] cursor-pointer"
+                          className="font-bold text-slate-900 dark:text-white line-clamp-1 hover:text-[#AF1763] cursor-pointer"
                         >
                           {site.site_name}
                         </h4>
                         {site.campaign_history && site.campaign_history.length > 1 ? (
                           <div className="flex flex-wrap items-center gap-1 mt-1">
-                            <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/60 dark:to-orange-950/40 text-[#E31B64] dark:text-rose-300 border border-rose-200/50">
-                              <Megaphone className="w-2.5 h-2.5 text-[#E31B64]" />
+                            <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded-md bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/60 dark:to-orange-950/40 text-[#AF1763] dark:text-rose-300 border border-rose-200/50">
+                              <Megaphone className="w-2.5 h-2.5 text-[#AF1763]" />
                               <span>{site.campaign_history.length} Campaigns</span>
                             </span>
                             {site.campaign_history.slice(0, 3).map((c, idx) => (
                               <span
                                 key={c.id || idx}
-                                className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                                className="text-[9px] font-medium px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-[#2C2E33]"
                                 title={`${c.client_name} (${c.client_category})`}
                               >
                                 {c.client_name}
@@ -206,7 +206,7 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                     {site.client_category ? (
                       <div>
                         <span className="inline-flex items-center gap-1 font-semibold text-rose-700 dark:text-rose-300 px-2.5 py-1 rounded-md bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800 whitespace-nowrap">
-                          <Briefcase className="w-3 h-3 text-[#E31B64]" />
+                          <Briefcase className="w-3 h-3 text-[#AF1763]" />
                           <span>{site.client_category}</span>
                         </span>
                         {(() => {
@@ -273,12 +273,12 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                     <div className="font-medium text-slate-700 dark:text-slate-300 flex items-center gap-1.5 flex-wrap">
                       <span>{site.dimensions.width}' × {site.dimensions.height}'</span>
                       {site.dimensions.aspect_ratio && (
-                        <span className="text-[10px] px-1 py-0.2 rounded bg-orange-50 dark:bg-orange-950/60 text-[#F37023] dark:text-amber-300 font-mono font-bold">
+                        <span className="text-[10px] px-1 py-0.2 rounded bg-orange-50 dark:bg-orange-950/60 text-[#0DCAF0] dark:text-amber-300 font-mono font-bold">
                           {site.dimensions.aspect_ratio}
                         </span>
                       )}
                     </div>
-                    <div className="text-[11px] font-semibold text-[#E31B64] dark:text-rose-400 flex items-center gap-1">
+                    <div className="text-[11px] font-semibold text-[#AF1763] dark:text-rose-400 flex items-center gap-1">
                       <Maximize2 className="w-3 h-3" />
                       {site.dimensions.total_sq_ft.toLocaleString()} sq ft
                     </div>
@@ -301,7 +301,7 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                       {onAddCampaign && (
                         <button
                           onClick={() => onAddCampaign(site.uid)}
-                          className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+                          className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
                           title="Log New Campaign Under this UID"
                         >
                           <Megaphone className="w-4 h-4" />
@@ -309,21 +309,21 @@ export const SiteTable: React.FC<SiteTableProps> = ({
                       )}
                       <button
                         onClick={() => onViewDetails(site)}
-                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
                         title="View Full Specifications"
                       >
                         <Eye className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => onQuickPptExport(site)}
-                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
                         title="Download PPT Slide"
                       >
                         <Presentation className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => onEditSite(site)}
-                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#E31B64] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
+                        className="p-1.5 rounded-lg text-slate-500 hover:text-[#AF1763] hover:bg-rose-50 dark:hover:bg-slate-800 transition-colors"
                         title="Edit Site Details"
                       >
                         <Edit2 className="w-4 h-4" />

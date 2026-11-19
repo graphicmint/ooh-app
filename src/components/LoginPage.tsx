@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Lock,
   Mail,
   ShieldCheck,
   Eye,
@@ -9,7 +8,6 @@ import {
   ArrowRight,
   AlertCircle,
   KeyRound,
-  CheckCircle2,
   Calendar,
 } from 'lucide-react';
 import { AuthUser } from '../types/auth';
@@ -59,15 +57,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
   };
 
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden bg-slate-900 text-slate-100">
-      {/* Ambient Brand Watermark & Mesh Background */}
+    <div className="min-h-screen relative flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden bg-[#000000] text-slate-100">
       <SubtleBrandWatermark />
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#E31B64]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#F37023]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#AF1763]/20 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#0D6EFD]/15 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Login Card */}
-      <div className="relative z-10 w-full max-w-md bg-white/95 dark:bg-[#0B0F17]/95 backdrop-blur-xl border border-rose-100/80 dark:border-rose-950/40 rounded-3xl shadow-2xl p-6 sm:p-8 space-y-6">
+      <div className="relative z-10 w-full max-w-md bg-white/95 dark:bg-[#191C24] backdrop-blur-xl border border-slate-200 dark:border-[#2C2E33] rounded-3xl shadow-2xl p-6 sm:p-8 space-y-6">
         {/* Brand Header */}
         <div className="text-center space-y-3">
           <div className="flex justify-center mb-1">
@@ -77,27 +74,26 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
           <div className="space-y-1">
             <h1 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 dark:text-white flex items-center justify-center gap-2">
               <span>Enterprise OOH Portal</span>
-              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-[#E31B64]/15 to-[#F37023]/15 text-[#E31B64] dark:text-[#F37023] border border-rose-200/50 dark:border-rose-900/50">
+              <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#198754]/15 text-[#198754] dark:text-[#20c975] border border-[#198754]/30">
                 <ShieldCheck className="w-3 h-3" /> Secure
               </span>
             </h1>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Sign in to access <strong>BlitzDeck</strong> & <strong>SiteSync</strong>
+              Sign in to access <strong className="text-[#AF1763] dark:text-[#e84c96]">BlitzDeck</strong> & <strong className="text-[#0DCAF0]">SiteSync</strong>
             </p>
           </div>
         </div>
 
         {/* Error Alert */}
         {error && (
-          <div className="p-3.5 rounded-2xl bg-rose-50 dark:bg-rose-950/50 border border-rose-200 dark:border-rose-800 text-xs text-rose-800 dark:text-rose-200 flex items-start gap-2.5 animate-shake">
-            <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+          <div className="p-3.5 rounded-2xl bg-[#AB2E3C]/15 border border-[#AB2E3C]/40 text-xs text-[#AB2E3C] dark:text-[#f8a5ae] flex items-start gap-2.5 animate-shake">
+            <AlertCircle className="w-4 h-4 text-[#AB2E3C] dark:text-[#f05668] shrink-0 mt-0.5" />
             <div className="flex-1 font-medium leading-relaxed">{error}</div>
           </div>
         )}
 
         {/* Credentials Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Corporate Email */}
           <div className="space-y-1.5">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
               Corporate Email ID
@@ -110,19 +106,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="ganesh.sagwekar@interspaceindia.co.in"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] transition-all"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#AF1763]/40 focus:border-[#AF1763] transition-all"
               />
             </div>
           </div>
 
-          {/* Security Passkey (Current Date DDMMYYYY) */}
           <div className="space-y-1.5">
             <div className="flex items-center justify-between">
               <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
                 Security Passkey
               </label>
               <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
-                <Calendar className="w-3 h-3 text-[#E31B64]" />
+                <Calendar className="w-3 h-3 text-[#0DCAF0]" />
                 <span>Format: DDMMYYYY</span>
               </span>
             </div>
@@ -134,7 +129,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder={`Current date (e.g. ${todayPasscode})`}
-                className="w-full pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#E31B64]/30 focus:border-[#E31B64] font-mono tracking-wider transition-all"
+                className="w-full pl-10 pr-11 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-[#0F1117] text-xs sm:text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:ring-2 focus:ring-[#AF1763]/40 focus:border-[#AF1763] font-mono tracking-wider transition-all"
               />
               <button
                 type="button"
@@ -147,28 +142,26 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
             </div>
           </div>
 
-          {/* Remember Me & Help */}
           <div className="flex items-center justify-between pt-1">
             <label className="flex items-center gap-2 cursor-pointer select-none">
               <input
                 type="checkbox"
                 checked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
-                className="rounded border-slate-300 dark:border-slate-700 text-[#E31B64] focus:ring-[#E31B64]"
+                className="rounded border-slate-300 dark:border-[#2C2E33] text-[#AF1763] focus:ring-[#AF1763]"
               />
               <span className="text-xs text-slate-600 dark:text-slate-400">Remember session</span>
             </label>
 
             <span className="text-[11px] text-slate-400">
-              Passkey: <strong className="text-slate-600 dark:text-slate-300 font-mono">{todayPasscode}</strong>
+              Passkey: <strong className="text-slate-600 dark:text-[#0DCAF0] font-mono">{todayPasscode}</strong>
             </span>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-[#E31B64] to-[#F37023] hover:brightness-105 active:scale-[0.99] text-white shadow-lg shadow-[#E31B64]/25 flex items-center justify-center gap-2 transition-all disabled:opacity-50 cursor-pointer"
+            className="w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-[#AF1763] to-[#d63384] hover:brightness-110 active:scale-[0.99] text-white shadow-lg shadow-[#AF1763]/30 flex items-center justify-center gap-2 transition-all disabled:opacity-50 cursor-pointer"
           >
             {isLoading ? (
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -181,18 +174,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
           </button>
         </form>
 
-        {/* Quick Helper Box for Ganesh Sagwekar */}
-        <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80">
-          <div className="p-3.5 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200/80 dark:border-rose-900/40 space-y-2">
+        {/* Quick Helper Box */}
+        <div className="pt-2 border-t border-slate-100 dark:border-[#2C2E33]">
+          <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-200 dark:border-[#2C2E33] space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#E31B64]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0D6EFD]" />
                 <span>Quick Access Profile</span>
               </span>
               <button
                 type="button"
                 onClick={handleFillDemo}
-                className="text-[10px] font-extrabold text-[#E31B64] dark:text-[#F37023] hover:underline flex items-center gap-1 cursor-pointer"
+                className="text-[10px] font-extrabold text-[#0DCAF0] hover:underline flex items-center gap-1 cursor-pointer"
               >
                 <Sparkles className="w-3 h-3" /> Auto-Fill Credentials
               </button>
@@ -203,12 +196,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
                 User: <span className="text-slate-900 dark:text-slate-200 font-semibold">ganesh.sagwekar@interspaceindia.co.in</span>
               </div>
               <div>
-                Password (Today): <span className="text-[#E31B64] dark:text-[#F37023] font-bold">{todayPasscode}</span>
+                Password (Today): <span className="text-[#AF1763] dark:text-[#e84c96] font-bold">{todayPasscode}</span>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

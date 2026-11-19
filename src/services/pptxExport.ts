@@ -43,7 +43,7 @@ export async function generateOOHPresentation({
       y: 1.0,
       w: 0.8,
       h: 0.08,
-      fill: { color: 'E31B64' }, // Interspace Magenta
+      fill: { color: 'AF1763' }, // Primary Magenta
     });
 
     // Tagline / Category
@@ -54,7 +54,7 @@ export async function generateOOHPresentation({
       h: 0.4,
       fontSize: 13,
       bold: true,
-      color: 'F37023', // Interspace Sunset Orange
+      color: '0DCAF0', // Supporting Cyan
       fontFace: 'Arial',
       charSpacing: 2,
     });
@@ -218,7 +218,7 @@ export async function generateOOHPresentation({
       w: 2.5,
       h: 0.28,
       rectRadius: 0.08,
-      fill: { color: 'E31B64' }, // Interspace Magenta
+      fill: { color: 'AF1763' }, // Primary Magenta
     });
     slide.addText(site.uid, {
       x: 0.5,

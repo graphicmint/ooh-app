@@ -40,13 +40,13 @@ const ToastItem: React.FC<{ toast: ToastMessage; onDismiss: (id: string) => void
   const icons = {
     success: <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />,
     error: <AlertCircle className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />,
-    info: <Info className="w-5 h-5 text-[#E31B64] shrink-0 mt-0.5" />,
+    info: <Info className="w-5 h-5 text-[#AF1763] shrink-0 mt-0.5" />,
   };
 
   const borders = {
     success: 'border-emerald-200 dark:border-emerald-800 bg-emerald-50/95 dark:bg-emerald-950/90 text-emerald-900 dark:text-emerald-100',
     error: 'border-rose-200 dark:border-rose-800 bg-rose-50/95 dark:bg-rose-950/90 text-rose-900 dark:text-rose-100',
-    info: 'border-rose-200 dark:border-rose-900/60 bg-rose-50/95 dark:bg-rose-950/90 text-rose-950 dark:text-rose-100',
+    info: 'border-rose-200 dark:border-[#AF1763]/40 bg-rose-50/95 dark:bg-rose-950/90 text-rose-950 dark:text-rose-100',
   };
 
   return (

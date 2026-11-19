@@ -29,7 +29,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: totalSites,
       sub: `${Array.from(new Set(sites.map((s) => s.location.city))).length} Metro Cities`,
       icon: MapPin,
-      color: 'rose',
+      accentText: 'text-[#0D6EFD]',
+      accentBg: 'bg-[#0D6EFD]/15',
       active: currentStatusFilter === 'all' || currentStatusFilter === 'All',
       filterVal: 'All',
     },
@@ -39,7 +40,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: availableSites,
       sub: `${Math.round((availableSites / (totalSites || 1)) * 100)}% Available`,
       icon: CheckCircle2,
-      color: 'emerald',
+      accentText: 'text-[#198754] dark:text-[#20c975]',
+      accentBg: 'bg-[#198754]/15',
       active: currentStatusFilter === 'Available',
       filterVal: 'Available',
     },
@@ -49,7 +51,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: bookedSites,
       sub: 'Generating Revenue',
       icon: Clock,
-      color: 'sunset',
+      accentText: 'text-[#0DCAF0]',
+      accentBg: 'bg-[#0DCAF0]/15',
       active: currentStatusFilter === 'Booked',
       filterVal: 'Booked',
     },
@@ -59,7 +62,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: maintenanceSites,
       sub: 'Inspection & Repair',
       icon: AlertTriangle,
-      color: 'amber',
+      accentText: 'text-[#FFC107]',
+      accentBg: 'bg-[#FFC107]/15',
       active: currentStatusFilter === 'Maintenance',
       filterVal: 'Maintenance',
     },
@@ -69,7 +73,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: totalSqFt.toLocaleString() + ' sq ft',
       sub: 'Display Media Footprint',
       icon: Maximize2,
-      color: 'rose',
+      accentText: 'text-[#AF1763] dark:text-[#e84c96]',
+      accentBg: 'bg-[#AF1763]/15',
       active: false,
       filterVal: null,
     },
@@ -79,7 +84,8 @@ export const StatsBar: React.FC<StatsBarProps> = ({
       value: formatINR(totalMonthlyVal),
       sub: 'Potential Monthly Gross',
       icon: Coins,
-      color: 'sunset',
+      accentText: 'text-[#AB2E3C] dark:text-[#f05668]',
+      accentBg: 'bg-[#AB2E3C]/15',
       active: false,
       filterVal: null,
     },
@@ -101,25 +107,17 @@ export const StatsBar: React.FC<StatsBarProps> = ({
               isClickable ? 'cursor-pointer hover:shadow-md' : 'cursor-default'
             } ${
               stat.active
-                ? 'bg-white dark:bg-slate-800 border-[#E31B64] dark:border-rose-400 ring-2 ring-[#E31B64]/20 shadow-md'
-                : 'bg-white/80 dark:bg-slate-900/80 border-slate-200/90 dark:border-slate-800/90 hover:border-rose-200 dark:hover:border-rose-900/60'
+                ? 'bg-white dark:bg-[#191C24] border-[#AF1763] ring-2 ring-[#AF1763]/25 shadow-md'
+                : 'bg-white dark:bg-[#191C24] border-slate-200 dark:border-[#2C2E33] hover:border-[#AF1763]/50'
             }`}
           >
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-2.5">
+              <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 {stat.label}
               </span>
-              <Icon
-                className={`w-4 h-4 ${
-                  stat.color === 'emerald'
-                    ? 'text-emerald-500'
-                    : stat.color === 'sunset'
-                    ? 'text-[#F37023]'
-                    : stat.color === 'amber'
-                    ? 'text-amber-500'
-                    : 'text-[#E31B64]'
-                }`}
-              />
+              <span className={`w-7 h-7 rounded-lg flex items-center justify-center ${stat.accentBg}`}>
+                <Icon className={`w-4 h-4 ${stat.accentText}`} />
+              </span>
             </div>
             <div className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white">
               {stat.value}

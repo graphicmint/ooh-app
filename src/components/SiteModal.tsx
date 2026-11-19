@@ -89,11 +89,11 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-slate-950/70 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-5xl rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-auto transition-all">
+      <div className="relative w-full max-w-5xl rounded-3xl bg-white dark:bg-[#191C24] border border-slate-200 dark:border-[#2C2E33] shadow-2xl overflow-hidden my-auto transition-all">
         {/* Top Sticky Header */}
-        <div className="flex items-center justify-between p-4 sm:px-6 border-b border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md">
+        <div className="flex items-center justify-between p-4 sm:px-6 border-b border-slate-200 dark:border-[#2C2E33] bg-white/90 dark:bg-[#191C24]/90 backdrop-blur-md">
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white shadow-sm">
+            <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-lg bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white shadow-sm">
               {site.uid}
             </span>
             <span
@@ -107,8 +107,8 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
               {site.category}
             </span>
             {site.client_category && (
-              <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-50 text-[#E31B64] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50">
-                <Briefcase className="w-3 h-3 text-[#E31B64]" />
+              <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-rose-50 text-[#AF1763] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50">
+                <Briefcase className="w-3 h-3 text-[#AF1763]" />
                 <span>{site.client_category}</span>
               </span>
             )}
@@ -124,7 +124,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
             </button>
             <button
               onClick={() => onExportPpt(site)}
-              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300 border border-rose-200 dark:border-rose-900/60 hover:bg-rose-100 flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300 border border-rose-200 dark:border-[#AF1763]/40 hover:bg-rose-100 flex items-center gap-1.5"
               title="Export PPT Slide"
             >
               <Presentation className="w-4 h-4" />
@@ -163,7 +163,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
             </h2>
             <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-1.5 text-xs text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-[#E31B64]" />
+                <MapPin className="w-3.5 h-3.5 text-[#AF1763]" />
                 {site.location.address}, {site.location.city}
                 {site.location.district ? ` (${site.location.district})` : ''}, {site.location.state}
                 {site.location.tier ? ` [${site.location.tier}]` : ''}
@@ -176,7 +176,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
 
           {/* Module: Interactive Photo Carousel */}
           <div className="space-y-3">
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center border border-slate-200 dark:border-slate-800 group shadow-lg">
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center border border-slate-200 dark:border-[#2C2E33] group shadow-lg">
               {currentPhoto ? (
                 <img
                   src={currentPhoto.url}
@@ -195,7 +195,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
               {currentPhoto && (
                 <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between text-white">
                   <div>
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white mr-2">
+                    <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white mr-2">
                       {currentPhoto.angle || 'Standard View'}
                     </span>
                     <span className="text-sm font-medium">{currentPhoto.caption}</span>
@@ -234,7 +234,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                     onClick={() => setActivePhotoIndex(idx)}
                     className={`relative w-20 sm:w-24 aspect-[16/10] rounded-xl overflow-hidden shrink-0 border-2 transition-all ${
                       activePhotoIndex === idx
-                        ? 'border-[#E31B64] ring-2 ring-rose-500/30 shadow-md scale-105'
+                        ? 'border-[#AF1763] ring-2 ring-rose-500/30 shadow-md scale-105'
                         : 'border-transparent opacity-60 hover:opacity-100'
                     }`}
                   >
@@ -255,7 +255,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
           {/* Grid: Technical Specs, Commercials & Vendor */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Column 1: Dimensions & Physical Specs */}
-            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-100 dark:border-[#2C2E33] space-y-3">
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                 Physical Specifications
               </span>
@@ -268,13 +268,13 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500 dark:text-slate-400">Aspect Ratio:</span>
-                  <span className="font-bold text-[#F37023] font-mono">
+                  <span className="font-bold text-[#0DCAF0] font-mono">
                     {site.dimensions.aspect_ratio || '2:1'}
                   </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-slate-500 dark:text-slate-400">Total Display Area:</span>
-                  <span className="font-bold text-[#E31B64] dark:text-rose-400 flex items-center gap-1">
+                  <span className="font-bold text-[#AF1763] dark:text-rose-400 flex items-center gap-1">
                     <Maximize2 className="w-3.5 h-3.5" />
                     {site.dimensions.total_sq_ft.toLocaleString()} Sq. Ft.
                   </span>
@@ -293,9 +293,9 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                   </span>
                 </div>
                 {site.traffic_peak && (
-                  <div className="flex justify-between items-center pt-1 border-t border-slate-200/60 dark:border-slate-700/60">
+                  <div className="flex justify-between items-center pt-1 border-t border-slate-200/60 dark:border-[#2C2E33]/60">
                     <span className="text-slate-500 dark:text-slate-400">Peak Traffic Dominance:</span>
-                    <span className="font-bold text-[#F37023] flex items-center gap-1 font-mono">
+                    <span className="font-bold text-[#0DCAF0] flex items-center gap-1 font-mono">
                       {site.traffic_peak} [{site.traffic_peak.startsWith('Evening') ? 'E' : 'M'}]
                     </span>
                   </div>
@@ -303,7 +303,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                 {site.location.pincode && (
                   <div className="flex justify-between">
                     <span className="text-slate-500 dark:text-slate-400">Postal Pincode:</span>
-                    <span className="font-bold font-mono text-[#E31B64] dark:text-rose-400">
+                    <span className="font-bold font-mono text-[#AF1763] dark:text-rose-400">
                       {site.location.pincode} (Last 4: {site.location.pincode.slice(-4)})
                     </span>
                   </div>
@@ -312,7 +312,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
             </div>
 
             {/* Column 2: Commercials & Client Category */}
-            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-100 dark:border-[#2C2E33] space-y-3">
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                 Commercials & Category
               </span>
@@ -345,14 +345,14 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
             </div>
 
             {/* Column 3: Site Vendor & Audience */}
-            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 space-y-3">
+            <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-100 dark:border-[#2C2E33] space-y-3">
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
                 Vendor & Audience
               </span>
               <div className="space-y-2 text-xs">
                 <div>
                   <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                    <Building2 className="w-3.5 h-3.5 text-[#F37023]" /> Owning Media Vendor:
+                    <Building2 className="w-3.5 h-3.5 text-[#0DCAF0]" /> Owning Media Vendor:
                   </span>
                   <p className="font-bold text-slate-800 dark:text-slate-200 mt-0.5">
                     {site.vendor_name || 'Direct / Agency Owned'}
@@ -364,7 +364,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
 
                 <div>
                   <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                    <Car className="w-3.5 h-3.5 text-[#F37023]" /> Daily Footfall / Traffic:
+                    <Car className="w-3.5 h-3.5 text-[#0DCAF0]" /> Daily Footfall / Traffic:
                   </span>
                   <p className="font-medium text-slate-800 dark:text-slate-200 mt-0.5">
                     {site.traffic_footfall || 'High-volume urban artery'}
@@ -380,7 +380,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                     }
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1 text-[#E31B64] dark:text-rose-400 font-semibold hover:underline"
+                    className="inline-flex items-center gap-1 text-[#AF1763] dark:text-rose-400 font-semibold hover:underline"
                   >
                     <span>View on Google Maps</span>
                     <ExternalLink className="w-3 h-3" />
@@ -392,8 +392,8 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
 
           {/* Notes / Special Highlights */}
           {site.notes && (
-            <div className="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/60 text-xs">
-              <span className="font-bold text-[#E31B64] dark:text-rose-300 block mb-1">
+            <div className="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-100 dark:border-[#AF1763]/40 text-xs">
+              <span className="font-bold text-[#AF1763] dark:text-rose-300 block mb-1">
                 Corridor & Site Notes:
               </span>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{site.notes}</p>
@@ -401,16 +401,16 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
           )}
 
           {/* Module: Multi-Brand Campaign Booking History */}
-          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-800 space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 dark:border-slate-700 pb-3">
+          <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#0F1117] border border-slate-200/80 dark:border-[#2C2E33] space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200/80 dark:border-[#2C2E33] pb-3">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white flex items-center justify-center shadow-xs">
+                <div className="w-8 h-8 rounded-xl bg-gradient-to-r from-[#AF1763] to-[#0DCAF0] text-white flex items-center justify-center shadow-xs">
                   <History className="w-4 h-4 stroke-[2.2]" />
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
                     <span>Campaign Booking History</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-100 text-[#E31B64] dark:bg-rose-950/70 dark:text-rose-300 font-bold">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-rose-100 text-[#AF1763] dark:bg-rose-950/70 dark:text-rose-300 font-bold">
                       {site.campaign_history?.length || 0} Logged
                     </span>
                   </h4>
@@ -424,7 +424,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                 <button
                   type="button"
                   onClick={() => onAddCampaign(site.uid)}
-                  className="px-3 py-1.5 rounded-xl text-xs font-bold border border-rose-200 dark:border-rose-900/60 bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-rose-950/50 text-[#E31B64] dark:text-rose-300 flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer"
+                  className="px-3 py-1.5 rounded-xl text-xs font-bold border border-rose-200 dark:border-[#AF1763]/40 bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-rose-950/50 text-[#AF1763] dark:text-rose-300 flex items-center gap-1.5 shadow-2xs transition-all cursor-pointer"
                 >
                   <Megaphone className="w-3.5 h-3.5 stroke-[2.2]" />
                   <span>Log New Campaign</span>
@@ -449,7 +449,7 @@ Maps: ${site.location.google_maps_url || `https://maps.google.com/?q=${site.loca
                             • {camp.campaign_name}
                           </span>
                         )}
-                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300 border border-rose-200/50">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300 border border-rose-200/50">
                           {camp.client_category}
                         </span>
                       </div>

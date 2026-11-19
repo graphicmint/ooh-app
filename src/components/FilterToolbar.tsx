@@ -80,7 +80,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
   hasActiveFilters,
 }) => {
   return (
-    <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 shadow-sm mb-6 transition-colors">
+    <div className="bg-white dark:bg-[#191C24] rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-[#2C2E33] shadow-sm mb-6 transition-colors">
       {/* Top Row: Search Bar + Sort + View Mode Switcher */}
       <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 mb-4">
         {/* Search Bar */}
@@ -91,7 +91,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search by UID, Site Name, Client Category (e.g. Banking, Wires), Vendor, or City..."
-            className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#E31B64]/25 focus:border-[#E31B64] transition-all"
+            className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50/50 dark:bg-[#0F1117] text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#AF1763]/25 focus:border-[#AF1763] transition-all"
           />
           {searchQuery && (
             <button
@@ -106,7 +106,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
         {/* Sort & View Switches */}
         <div className="flex items-center gap-2 sm:gap-3 self-end md:self-auto">
           {/* Sort By Dropdown */}
-          <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 text-xs font-medium text-slate-700 dark:text-slate-200">
+          <div className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50/50 dark:bg-[#0F1117] text-xs font-medium text-slate-700 dark:text-slate-200">
             <ArrowUpDown className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <select
               value={sortBy}
@@ -122,12 +122,12 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700">
+          <div className="flex items-center p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/80 dark:border-[#2C2E33]">
             <button
               onClick={() => onViewModeChange('grid')}
               className={`p-2 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
                 viewMode === 'grid'
-                  ? 'bg-white dark:bg-slate-700 text-[#E31B64] dark:text-rose-400 shadow-sm'
+                  ? 'bg-white dark:bg-slate-700 text-[#AF1763] dark:text-rose-400 shadow-sm'
                   : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
               title="Grid Card View"
@@ -139,7 +139,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
               onClick={() => onViewModeChange('table')}
               className={`p-2 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
                 viewMode === 'table'
-                  ? 'bg-white dark:bg-slate-700 text-[#E31B64] dark:text-rose-400 shadow-sm'
+                  ? 'bg-white dark:bg-slate-700 text-[#AF1763] dark:text-rose-400 shadow-sm'
                   : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
               title="Compact Table List View"
@@ -151,7 +151,7 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
               onClick={() => onViewModeChange('map')}
               className={`p-2 rounded-lg text-xs font-medium transition-all flex items-center gap-1.5 ${
                 viewMode === 'map'
-                  ? 'bg-white dark:bg-slate-700 text-[#E31B64] dark:text-rose-400 shadow-sm'
+                  ? 'bg-white dark:bg-slate-700 text-[#AF1763] dark:text-rose-400 shadow-sm'
                   : 'text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
               title="Interactive Spatial Map View"
@@ -164,9 +164,9 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
       </div>
 
       {/* Second Row: Multi-Filter Controls */}
-      <div className="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800 text-xs">
+      <div className="flex flex-wrap items-center gap-2.5 pt-3 border-t border-slate-100 dark:border-[#2C2E33] text-xs">
         <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium mr-1">
-          <Filter className="w-3.5 h-3.5 text-[#E31B64]" />
+          <Filter className="w-3.5 h-3.5 text-[#AF1763]" />
           <span>Filters:</span>
         </div>
 
@@ -177,8 +177,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
             onChange={(e) => onClientCategoryChange(e.target.value)}
             className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
               selectedClientCategory !== 'All'
-                ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#E31B64] dark:text-rose-300 ring-1 ring-rose-500/20'
-                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#AF1763] dark:text-rose-300 ring-1 ring-rose-500/20'
+                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
             }`}
           >
             <option value="All">All Client Categories</option>
@@ -197,8 +197,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
             onChange={(e) => onVendorChange(e.target.value)}
             className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
               selectedVendor !== 'All'
-                ? 'bg-orange-50 dark:bg-orange-950/50 border-orange-300 dark:border-orange-800 text-[#F37023] dark:text-amber-300 ring-1 ring-orange-500/20'
-                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+                ? 'bg-orange-50 dark:bg-orange-950/50 border-orange-300 dark:border-orange-800 text-[#0DCAF0] dark:text-amber-300 ring-1 ring-orange-500/20'
+                : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
             }`}
           >
             <option value="All">All Site Vendors</option>
@@ -216,8 +216,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
           onChange={(e) => onCategoryChange(e.target.value)}
           className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
             selectedCategory !== 'All'
-              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#E31B64] dark:text-rose-300'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#AF1763] dark:text-rose-300'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
           }`}
         >
           <option value="All">All Media Formats</option>
@@ -234,8 +234,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
           onChange={(e) => onStatusChange(e.target.value)}
           className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
             selectedStatus !== 'All'
-              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#E31B64] dark:text-rose-300'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#AF1763] dark:text-rose-300'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
           }`}
         >
           <option value="All">All Statuses</option>
@@ -252,8 +252,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
           onChange={(e) => onCityChange(e.target.value)}
           className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
             selectedCity !== 'All'
-              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#E31B64] dark:text-rose-300'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#AF1763] dark:text-rose-300'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
           }`}
         >
           <option value="All">All Metro Cities</option>
@@ -270,8 +270,8 @@ export const FilterToolbar: React.FC<FilterToolbarProps> = ({
           onChange={(e) => onIlluminationChange(e.target.value)}
           className={`px-3 py-1.5 rounded-lg border font-medium cursor-pointer transition-all ${
             selectedIllumination !== 'All'
-              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#E31B64] dark:text-rose-300'
-              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
+              ? 'bg-rose-50 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-[#AF1763] dark:text-rose-300'
+              : 'bg-white dark:bg-slate-800 border-slate-200 dark:border-[#2C2E33] text-slate-700 dark:text-slate-300'
           }`}
         >
           <option value="All">All Illuminations</option>

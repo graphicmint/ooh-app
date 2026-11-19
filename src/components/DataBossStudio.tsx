@@ -578,17 +578,17 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
       {/* Studio Banner & Navigation */}
-      <div className="bg-gradient-to-r from-slate-900 via-[#181116] to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-rose-950/40">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#F37023]/10 via-[#E31B64]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="bg-gradient-to-r from-[#AF1763] via-[#9E1459] to-[#191C24] rounded-3xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-[#AF1763]/40">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-[#0DCAF0]/15 via-[#0D6EFD]/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-rose-200 border border-white/10 mb-3">
-              <RefreshCw className="w-3.5 h-3.5 text-[#F37023]" />
+              <RefreshCw className="w-3.5 h-3.5 text-[#0DCAF0]" />
               <span>Master Data & Sourcing Studio</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              <span className="bg-gradient-to-r from-[#F37023] to-[#E31B64] bg-clip-text text-transparent">SiteSync</span> Studio
+              <span className="bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] bg-clip-text text-transparent">SiteSync</span> Studio
             </h1>
             <p className="mt-1 text-sm text-slate-300 max-w-2xl">
               Centralized operations workspace for onboarding hoardings, batch uploading Excel inventory sheets, maintaining vendor contacts, and managing advertiser categories.
@@ -598,7 +598,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
           <div className="flex items-center gap-3">
             <button
               onClick={onAddSite}
-              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white transition-all shadow-lg shadow-orange-500/20 flex items-center gap-2"
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white transition-all shadow-lg shadow-orange-500/20 flex items-center gap-2"
             >
               <Plus className="w-4 h-4 stroke-[2.5]" />
               <span>Register Single Site</span>
@@ -620,7 +620,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             onClick={() => setActiveTab('bulk-upload')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
               activeTab === 'bulk-upload'
-                ? 'bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white shadow-md shadow-orange-500/20'
+                ? 'bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] text-white shadow-md shadow-orange-500/20'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700/60'
             }`}
           >
@@ -632,7 +632,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             onClick={() => setActiveTab('single-add')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
               activeTab === 'single-add'
-                ? 'bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white shadow-md shadow-orange-500/20'
+                ? 'bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] text-white shadow-md shadow-orange-500/20'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700/60'
             }`}
           >
@@ -644,7 +644,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             onClick={() => setActiveTab('inventory-vault')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
               activeTab === 'inventory-vault'
-                ? 'bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white shadow-md shadow-orange-500/20'
+                ? 'bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] text-white shadow-md shadow-orange-500/20'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700/60'
             }`}
           >
@@ -656,7 +656,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             onClick={() => setActiveTab('vendors')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
               activeTab === 'vendors'
-                ? 'bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white shadow-md shadow-orange-500/20'
+                ? 'bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] text-white shadow-md shadow-orange-500/20'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700/60'
             }`}
           >
@@ -668,7 +668,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             onClick={() => setActiveTab('categories')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all ${
               activeTab === 'categories'
-                ? 'bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white shadow-md shadow-orange-500/20'
+                ? 'bg-gradient-to-r from-[#0DCAF0] to-[#AF1763] text-white shadow-md shadow-orange-500/20'
                 : 'bg-slate-800/60 text-slate-300 hover:bg-slate-800 border border-slate-700/60'
             }`}
           >
@@ -681,11 +681,11 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
       {/* TAB 1: BULK SPREADSHEET UPLOAD */}
       {activeTab === 'bulk-upload' && (
         <div className="space-y-6 animate-fade-in">
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-rose-950/40 shadow-sm">
+          <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <UploadCloud className="w-5 h-5 text-[#F37023]" />
+                  <UploadCloud className="w-5 h-5 text-[#0DCAF0]" />
                   <span>Upload OOH Inventory Spreadsheet (.xlsx / .csv)</span>
                 </h2>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -695,7 +695,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
               <button
                 onClick={handleDownloadTemplate}
-                className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-rose-50/70 dark:bg-rose-950/40 text-[#E31B64] dark:text-rose-300 border border-rose-200/80 dark:border-rose-900/60 hover:bg-rose-100/70 flex items-center gap-2 shrink-0 transition-all"
+                className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-rose-50/70 dark:bg-rose-950/40 text-[#AF1763] dark:text-rose-300 border border-rose-200/80 dark:border-[#AF1763]/40 hover:bg-rose-100/70 flex items-center gap-2 shrink-0 transition-all"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Sample Excel</span>
@@ -710,8 +710,8 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
               onClick={() => fileInputRef.current?.click()}
               className={`border-2 border-dashed rounded-2xl p-8 sm:p-12 text-center cursor-pointer transition-all ${
                 isDragging
-                  ? 'border-[#F37023] bg-orange-50/50 dark:bg-orange-950/20 scale-[1.01]'
-                  : 'border-slate-200 dark:border-slate-800 hover:border-[#F37023]/60 hover:bg-slate-50/60 dark:hover:bg-slate-800/40'
+                  ? 'border-[#0DCAF0] bg-orange-50/50 dark:bg-orange-950/20 scale-[1.01]'
+                  : 'border-slate-200 dark:border-[#2C2E33] hover:border-[#0DCAF0]/60 hover:bg-slate-50/60 dark:hover:bg-slate-800/40'
               }`}
             >
               <input
@@ -722,9 +722,9 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                 className="hidden"
               />
 
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#F37023]/10 to-[#E31B64]/10 text-[#F37023] flex items-center justify-center mx-auto mb-4 shadow-inner border border-rose-100 dark:border-rose-950/50">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#0DCAF0]/10 to-[#AF1763]/10 text-[#0DCAF0] flex items-center justify-center mx-auto mb-4 shadow-inner border border-rose-100 dark:border-rose-950/50">
                 {isProcessingFile ? (
-                  <RefreshCw className="w-8 h-8 animate-spin text-[#E31B64]" />
+                  <RefreshCw className="w-8 h-8 animate-spin text-[#AF1763]" />
                 ) : (
                   <FileSpreadsheet className="w-8 h-8" />
                 )}
@@ -738,10 +738,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
               </p>
 
               <div className="mt-4 flex items-center justify-center gap-2">
-                <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-rose-50 dark:bg-rose-950/50 text-[#E31B64] dark:text-rose-300 border border-rose-200/50 dark:border-rose-900/30">
+                <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-rose-50 dark:bg-rose-950/50 text-[#AF1763] dark:text-rose-300 border border-rose-200/50 dark:border-rose-900/30">
                   Auto 7-Segment UID Generator
                 </span>
-                <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-50 dark:bg-amber-950/50 text-[#F37023] dark:text-amber-300 border border-amber-200/50 dark:border-amber-900/30">
+                <span className="px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-50 dark:bg-amber-950/50 text-[#0DCAF0] dark:text-amber-300 border border-amber-200/50 dark:border-amber-900/30">
                   Landmark PIN Derivation
                 </span>
               </div>
@@ -750,11 +750,11 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
           {/* Parsed Rows Preview Table */}
           {parsedRows.length > 0 && (
-            <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-rose-950/40 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                    <CheckCircle2 className="w-5 h-5 text-[#E31B64]" />
+                    <CheckCircle2 className="w-5 h-5 text-[#AF1763]" />
                     <span>Parsed Ingestion Staging ({parsedRows.length} Hoardings Detected)</span>
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -776,7 +776,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   <button
                     onClick={handleSaveParsedBatch}
                     disabled={isSavingBatch}
-                    className="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white shadow-md shadow-orange-500/25 flex items-center gap-2 disabled:opacity-50"
+                    className="px-5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white shadow-md shadow-orange-500/25 flex items-center gap-2 disabled:opacity-50"
                   >
                     {isSavingBatch ? (
                       <>
@@ -794,9 +794,9 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
               </div>
 
               {/* Staging Data Table */}
-              <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+              <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-[#2C2E33]">
                 <table className="w-full text-left text-xs">
-                  <thead className="bg-slate-50/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-800">
+                  <thead className="bg-slate-50/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-[#2C2E33]">
                     <tr>
                       <th className="p-3">#</th>
                       <th className="p-3">Generated / Mapped UID</th>
@@ -817,10 +817,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                         className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors"
                       >
                         <td className="p-3 font-mono text-slate-400">{item.rowNum}</td>
-                        <td className="p-3 font-mono font-bold text-[#E31B64] dark:text-rose-400">
+                        <td className="p-3 font-mono font-bold text-[#AF1763] dark:text-rose-400">
                           {item.site.uid}
                           {item.uidGenerated && (
-                            <span className="ml-1.5 px-1.5 py-0.5 rounded text-[10px] bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300">
+                            <span className="ml-1.5 px-1.5 py-0.5 rounded text-[10px] bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300">
                               Auto-UID
                             </span>
                           )}
@@ -834,7 +834,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                         <td className="p-3 font-mono text-slate-700 dark:text-slate-300">
                           {item.site.location?.pincode}
                           {item.pinDerived && (
-                            <span className="ml-1 px-1 py-0.2 rounded text-[9px] bg-amber-50 dark:bg-amber-950 text-[#F37023] dark:text-amber-300 border border-amber-200/50">
+                            <span className="ml-1 px-1 py-0.2 rounded text-[9px] bg-amber-50 dark:bg-amber-950 text-[#0DCAF0] dark:text-amber-300 border border-amber-200/50">
                               Derived
                             </span>
                           )}
@@ -847,7 +847,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                           {item.site.vendor_name || '—'}
                         </td>
                         <td className="p-3">
-                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300 border border-rose-200/50">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300 border border-rose-200/50">
                             {item.site.client_category || 'General'}
                           </span>
                         </td>
@@ -860,7 +860,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                               item.site.status === 'Available'
                                 ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300'
                                 : item.site.status === 'Booked'
-                                ? 'bg-rose-100 text-[#E31B64] dark:bg-rose-950/70 dark:text-rose-300'
+                                ? 'bg-rose-100 text-[#AF1763] dark:bg-rose-950/70 dark:text-rose-300'
                                 : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                             }`}
                           >
@@ -879,10 +879,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
       {/* TAB 2: SINGLE SITE ONBOARDING */}
       {activeTab === 'single-add' && (
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-rose-950/40 shadow-sm space-y-6 animate-fade-in">
+        <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm space-y-6 animate-fade-in">
           <div className="max-w-2xl">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Plus className="w-5 h-5 text-[#F37023]" />
+              <Plus className="w-5 h-5 text-[#0DCAF0]" />
               <span>Single OOH Site Registration Wizard</span>
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -890,10 +890,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-gradient-to-tr from-rose-50/50 via-orange-50/40 to-slate-50 dark:from-slate-800/80 dark:via-rose-950/20 dark:to-slate-900 border border-rose-100/80 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="p-6 rounded-2xl bg-gradient-to-tr from-rose-50/50 via-orange-50/40 to-slate-50 dark:from-slate-800/80 dark:via-rose-950/20 dark:to-slate-900 border border-rose-100/80 dark:border-[#2C2E33] flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2">
               <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#E31B64]" />
+                <Sparkles className="w-4 h-4 text-[#AF1763]" />
                 <span>Launch 4-Step Registration Modal</span>
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 max-w-lg">
@@ -903,7 +903,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
             <button
               onClick={onAddSite}
-              className="px-6 py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white shadow-lg shadow-orange-500/25 flex items-center gap-2 shrink-0 transition-all"
+              className="px-6 py-3 rounded-xl text-xs font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white shadow-lg shadow-orange-500/25 flex items-center gap-2 shrink-0 transition-all"
             >
               <Plus className="w-4 h-4 stroke-[2.5]" />
               <span>Open Site Registration Form</span>
@@ -911,18 +911,18 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
           </div>
 
           {/* Quick List of Recently Registered Sites */}
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
+          <div className="pt-4 border-t border-slate-100 dark:border-[#2C2E33]">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
               Recently Added Sites in Database
             </h4>
-            <div className="divide-y divide-slate-100 dark:divide-slate-800 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+            <div className="divide-y divide-slate-100 dark:divide-slate-800 border border-slate-200 dark:border-[#2C2E33] rounded-xl overflow-hidden">
               {sites.slice(0, 5).map((site) => (
                 <div
                   key={site.uid}
                   className="p-3.5 flex items-center justify-between gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/40 text-xs"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-mono font-bold text-[#E31B64] dark:text-rose-400">
+                    <span className="font-mono font-bold text-[#AF1763] dark:text-rose-400">
                       {site.uid}
                     </span>
                     <span className="font-medium text-slate-900 dark:text-white">
@@ -965,11 +965,11 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
       {/* TAB 3: MASTER INVENTORY VAULT */}
       {activeTab === 'inventory-vault' && (
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-rose-950/40 shadow-sm space-y-4 animate-fade-in">
+        <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 sm:p-8 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm space-y-4 animate-fade-in">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <h2 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Database className="w-5 h-5 text-[#F37023]" />
+                <Database className="w-5 h-5 text-[#0DCAF0]" />
                 <span>Master Inventory Database ({consolidatedVaultSites.length} Unique Sites)</span>
               </h2>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -981,7 +981,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenAddCampaign && onOpenAddCampaign()}
-                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-rose-200 dark:border-rose-900/60 bg-rose-50/80 dark:bg-rose-950/40 hover:bg-rose-100/80 dark:hover:bg-rose-900/50 text-[#E31B64] dark:text-rose-300 flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
+                className="px-3.5 py-2 rounded-xl text-xs font-bold border border-rose-200 dark:border-[#AF1763]/40 bg-rose-50/80 dark:bg-rose-950/40 hover:bg-rose-100/80 dark:hover:bg-rose-900/50 text-[#AF1763] dark:text-rose-300 flex items-center gap-1.5 shadow-sm transition-all cursor-pointer"
                 title="Log a new brand campaign under an existing site UID"
               >
                 <Megaphone className="w-4 h-4 stroke-[2.2]" />
@@ -990,7 +990,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
 
               <button
                 onClick={onAddSite}
-                className="px-3.5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white flex items-center gap-1.5 shadow-sm cursor-pointer"
+                className="px-3.5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white flex items-center gap-1.5 shadow-sm cursor-pointer"
               >
                 <Plus className="w-4 h-4 stroke-[2.5]" />
                 <span>Add Site</span>
@@ -1007,14 +1007,14 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                 placeholder="Search by UID, site name, city, vendor or client category..."
                 value={vaultSearch}
                 onChange={(e) => setVaultSearch(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-xs focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
               />
             </div>
 
             <select
               value={vaultFilterCity}
               onChange={(e) => setVaultFilterCity(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-200"
+              className="px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-200"
             >
               <option value="All">All Cities ({uniqueCities.length})</option>
               {uniqueCities.map((c) => (
@@ -1025,7 +1025,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
             <select
               value={vaultFilterStatus}
               onChange={(e) => setVaultFilterStatus(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-200"
+              className="px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-xs text-slate-700 dark:text-slate-200"
             >
               <option value="All">All Statuses</option>
               <option value="Available">Available</option>
@@ -1035,9 +1035,9 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
           </div>
 
           {/* Master Table */}
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800 mt-4">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-[#2C2E33] mt-4">
             <table className="w-full text-left text-xs">
-              <thead className="bg-slate-50/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-slate-800">
+              <thead className="bg-slate-50/80 dark:bg-slate-800/70 text-slate-700 dark:text-slate-300 font-bold border-b border-slate-200 dark:border-[#2C2E33]">
                 <tr>
                   <th className="p-3">UID</th>
                   <th className="p-3">Site Name & Location</th>
@@ -1063,10 +1063,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                       key={site.uid}
                       className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40 transition-colors"
                     >
-                      <td className="p-3 font-mono font-bold text-[#E31B64] dark:text-rose-400">
+                      <td className="p-3 font-mono font-bold text-[#AF1763] dark:text-rose-400">
                         <div>{site.uid}</div>
                         {site.campaign_history && site.campaign_history.length > 0 && (
-                          <span className="inline-flex items-center gap-1 mt-1 text-[9px] font-sans font-bold px-1.5 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300 border border-rose-200/50">
+                          <span className="inline-flex items-center gap-1 mt-1 text-[9px] font-sans font-bold px-1.5 py-0.5 rounded bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300 border border-rose-200/50">
                             {site.campaign_history.length} Campaign{site.campaign_history.length !== 1 ? 's' : ''}
                           </span>
                         )}
@@ -1090,7 +1090,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                         {site.vendor_name || '—'}
                       </td>
                       <td className="p-3">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#E31B64] dark:text-rose-300 border border-rose-200/50">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-rose-50 dark:bg-rose-950/60 text-[#AF1763] dark:text-rose-300 border border-rose-200/50">
                           {site.client_category || 'General'}
                         </span>
                       </td>
@@ -1103,7 +1103,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                             site.status === 'Available'
                               ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950/70 dark:text-emerald-300'
                               : site.status === 'Booked'
-                              ? 'bg-rose-100 text-[#E31B64] dark:bg-rose-950/70 dark:text-rose-300'
+                              ? 'bg-rose-100 text-[#AF1763] dark:bg-rose-950/70 dark:text-rose-300'
                               : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
                           }`}
                         >
@@ -1116,7 +1116,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                             <button
                               onClick={() => onOpenAddCampaign(site.uid)}
                               title="Log new campaign under this UID"
-                              className="p-1.5 rounded-lg text-[#E31B64] hover:bg-rose-50 dark:hover:bg-rose-950/50"
+                              className="p-1.5 rounded-lg text-[#AF1763] hover:bg-rose-50 dark:hover:bg-rose-950/50"
                             >
                               <Megaphone className="w-3.5 h-3.5" />
                             </button>
@@ -1131,7 +1131,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                           <button
                             onClick={() => onEditSite(site)}
                             title="Edit site"
-                            className="p-1.5 rounded-lg text-[#E31B64] hover:bg-rose-50 dark:hover:bg-rose-950/50"
+                            className="p-1.5 rounded-lg text-[#AF1763] hover:bg-rose-50 dark:hover:bg-rose-950/50"
                           >
                             <Edit className="w-3.5 h-3.5" />
                           </button>
@@ -1164,9 +1164,9 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
       {activeTab === 'vendors' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
           {/* Add Vendor Form */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-rose-100/70 dark:border-rose-950/40 shadow-sm h-fit">
+          <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm h-fit">
             <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-              <Plus className="w-4 h-4 text-[#F37023]" />
+              <Plus className="w-4 h-4 text-[#0DCAF0]" />
               <span>Register New Media Vendor</span>
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
@@ -1184,7 +1184,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   placeholder="e.g. Pioneer Publicity Corp."
                   value={newVendorName}
                   onChange={(e) => setNewVendorName(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
                 />
               </div>
 
@@ -1197,7 +1197,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   placeholder="e.g. Regional Manager / Key Accounts"
                   value={newVendorContact}
                   onChange={(e) => setNewVendorContact(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
                 />
               </div>
 
@@ -1210,7 +1210,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   placeholder="e.g. +91 98200 12345"
                   value={newVendorPhone}
                   onChange={(e) => setNewVendorPhone(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
                 />
               </div>
 
@@ -1223,13 +1223,13 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   placeholder="e.g. sales@vendor.com"
                   value={newVendorEmail}
                   onChange={(e) => setNewVendorEmail(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-2 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full mt-2 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white shadow-md transition-all flex items-center justify-center gap-2"
               >
                 <Building2 className="w-4 h-4" />
                 <span>Save Vendor to Registry</span>
@@ -1238,10 +1238,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
           </div>
 
           {/* Vendor Directory Listing */}
-          <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-3xl p-6 border border-rose-100/70 dark:border-rose-950/40 shadow-sm space-y-4">
+          <div className="lg:col-span-2 bg-white dark:bg-[#191C24] rounded-3xl p-6 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm space-y-4">
             <div>
               <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-[#F37023]" />
+                <Building2 className="w-5 h-5 text-[#0DCAF0]" />
                 <span>Media Vendors Directory ({vendorList.length || storedVendors.length} Registered)</span>
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1258,14 +1258,14 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                 return (
                   <div
                     key={vendor.id || vendor.name}
-                    className="p-4 rounded-2xl bg-slate-50/70 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/80 hover:border-rose-300 dark:hover:border-rose-900/60 transition-all flex flex-col justify-between"
+                    className="p-4 rounded-2xl bg-slate-50/70 dark:bg-[#0F1117] border border-slate-200/80 dark:border-[#2C2E33]/80 hover:border-rose-300 dark:hover:border-[#AF1763]/60 transition-all flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex items-start justify-between gap-2">
                         <h4 className="font-bold text-xs text-slate-900 dark:text-white">
                           {vendor.name}
                         </h4>
-                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-[#E31B64] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-[#AF1763] dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/50">
                           {ownedSitesCount} site{ownedSitesCount !== 1 ? 's' : ''}
                         </span>
                       </div>
@@ -1297,9 +1297,9 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
       {activeTab === 'categories' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
           {/* Add Category Form */}
-          <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-rose-100/70 dark:border-rose-950/40 shadow-sm h-fit">
+          <div className="bg-white dark:bg-[#191C24] rounded-3xl p-6 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm h-fit">
             <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-2">
-              <Plus className="w-4 h-4 text-[#F37023]" />
+              <Plus className="w-4 h-4 text-[#0DCAF0]" />
               <span>Add Client Industry Category</span>
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">
@@ -1317,13 +1317,13 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                   placeholder="e.g. Electric Vehicles (EV)"
                   value={newCategoryName}
                   onChange={(e) => setNewCategoryName(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#E31B64] focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-[#2C2E33] bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-[#AF1763] focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full mt-2 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white shadow-md transition-all flex items-center justify-center gap-2"
+                className="w-full mt-2 py-2.5 rounded-xl font-bold bg-gradient-to-r from-[#0DCAF0] via-[#C2185B] to-[#AF1763] hover:from-[#0D6EFD] hover:to-[#8F1250] text-white shadow-md transition-all flex items-center justify-center gap-2"
               >
                 <Tag className="w-4 h-4" />
                 <span>Add Category</span>
@@ -1332,10 +1332,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
           </div>
 
           {/* Categories Listing Chips */}
-          <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-3xl p-6 border border-rose-100/70 dark:border-rose-950/40 shadow-sm space-y-4">
+          <div className="lg:col-span-2 bg-white dark:bg-[#191C24] rounded-3xl p-6 border border-rose-100/70 dark:border-[#2C2E33] shadow-sm space-y-4">
             <div>
               <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <Tag className="w-5 h-5 text-[#E31B64]" />
+                <Tag className="w-5 h-5 text-[#AF1763]" />
                 <span>Configured Client Verticals ({storedCategories.length})</span>
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1349,10 +1349,10 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
                 return (
                   <div
                     key={cat}
-                    className="px-3.5 py-2 rounded-xl bg-slate-50/70 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 flex items-center gap-2 text-xs"
+                    className="px-3.5 py-2 rounded-xl bg-slate-50/70 dark:bg-[#0F1117] border border-slate-200 dark:border-[#2C2E33]/80 flex items-center gap-2 text-xs"
                   >
                     <span className="font-bold text-slate-800 dark:text-slate-200">{cat}</span>
-                    <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-rose-50 text-[#E31B64] dark:bg-rose-950 dark:text-rose-300 border border-rose-200/50">
+                    <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono font-bold bg-rose-50 text-[#AF1763] dark:bg-rose-950 dark:text-rose-300 border border-rose-200/50">
                       {count} sites
                     </span>
                   </div>
