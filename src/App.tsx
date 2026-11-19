@@ -33,24 +33,19 @@ export function App() {
   const [sites, setSites] = useState<OOHSite[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // User Authentication Session State
-  const [currentUser, setCurrentUser] = useState<AuthUser | null>(() =>
-    authService.getStoredSession()
-  );
+  // Always start on the Login Page on initial load
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(() => {
+    authService.clearSession();
+    return null;
+  });
 
   // Active Portal State ('landing' | 'advantage' | 'databoss')
-  const [activePortal, setActivePortal] = useState<'landing' | 'advantage' | 'databoss'>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('interspace_active_portal');
-      if (saved === 'advantage' || saved === 'databoss' || saved === 'landing') return saved as any;
-    }
-    return 'landing';
-  });
+  const [activePortal, setActivePortal] = useState<'landing' | 'advantage' | 'databoss'>('landing');
 
   const handleSelectPortal = (portal: 'landing' | 'advantage' | 'databoss') => {
     setActivePortal(portal);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('interspace_active_portal', portal);
+      localStorage.setItem('blitzdeck_active_portal', portal);
     }
   };
 

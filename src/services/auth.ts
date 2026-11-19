@@ -1,6 +1,7 @@
 import { AuthUser } from '../types/auth';
 
-const AUTH_STORAGE_KEY = 'interspace_auth_user_v1';
+const AUTH_STORAGE_KEY = 'blitzdeck_auth_user_v2';
+const LEGACY_AUTH_STORAGE_KEY = 'interspace_auth_user_v1';
 
 export function getTodayDateCode(date: Date = new Date()): string {
   const dd = String(date.getDate()).padStart(2, '0');
@@ -120,6 +121,8 @@ export const authService = {
     try {
       localStorage.removeItem(AUTH_STORAGE_KEY);
       sessionStorage.removeItem(AUTH_STORAGE_KEY);
+      localStorage.removeItem(LEGACY_AUTH_STORAGE_KEY);
+      sessionStorage.removeItem(LEGACY_AUTH_STORAGE_KEY);
     } catch (e) {
       console.error('Failed to clear auth session', e);
     }
