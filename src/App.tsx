@@ -445,7 +445,7 @@ export function App() {
             setCurrentUser(user);
             addToast(
               `Welcome, ${user.name}!`,
-              `Authenticated into Interspace Communications Enterprise Portal as ${user.email}`,
+              `Authenticated into BlitzDeck & SiteSync Portal as ${user.email}`,
               'success'
             );
           }}
@@ -645,7 +645,7 @@ export function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
           <div className="flex items-center gap-2">
             <span className="font-bold text-slate-800 dark:text-slate-200">
-              Interspace OOH Enterprise
+              BlitzDeck & SiteSync
             </span>
             <span>• Outdoor Media Planning & Master Vault Architecture</span>
           </div>
@@ -656,7 +656,7 @@ export function App() {
                 activePortal === 'advantage' ? 'font-bold text-[#E31B64] dark:text-rose-400' : ''
               }`}
             >
-              Interspace Advantage
+              BlitzDeck
             </button>
             <span>•</span>
             <button
@@ -665,7 +665,7 @@ export function App() {
                 activePortal === 'databoss' ? 'font-bold text-[#F37023] dark:text-amber-400' : ''
               }`}
             >
-              Interspace DataBoss
+              SiteSync
             </button>
             <span>•</span>
             <button

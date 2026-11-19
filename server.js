@@ -315,7 +315,7 @@ function autoSyncVendorAndCategory(site) {
 
 // Health Check
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', service: 'AdVantage OOH API', timestamp: new Date().toISOString() });
+  res.json({ status: 'ok', service: 'BlitzDeck & SiteSync OOH API', timestamp: new Date().toISOString() });
 });
 
 // GET /api/categories
@@ -620,5 +620,5 @@ if (fs.existsSync(DIST_DIR)) {
 }
 
 app.listen(PORT, () => {
-  console.log(`AdVantage OOH Server running on http://localhost:${PORT}`);
+  console.log(`BlitzDeck & SiteSync OOH Server running on http://localhost:${PORT}`);
 });

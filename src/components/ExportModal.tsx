@@ -34,7 +34,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
     'Premium Out-Of-Home (OOH) Media Proposal'
   );
   const [clientName, setClientName] = useState('Tata Copper Plus & Brand Partners');
-  const [agencyName, setAgencyName] = useState('Interspace Communications');
+  const [agencyName, setAgencyName] = useState('BlitzDeck Media');
   const [includeCover, setIncludeCover] = useState(true);
 
   // Progress state

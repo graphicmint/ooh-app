@@ -4,7 +4,6 @@ import type { OOHSite, SiteVendor, OOHCategory, IlluminationType, SiteStatus } f
 import { storageService } from '../services/storage';
 import { generateHoardingUid, derivePostalCode, INDIA_LOCATIONS } from '../data/indiaLocations';
 import { consolidateSitesByUid } from '../utils/consolidateSites';
-import { InterspaceMotif } from './InterspaceBrand';
 import {
   UploadCloud,
   FileSpreadsheet,
@@ -208,7 +207,7 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
       { wch: 40 },
     ];
 
-    XLSX.writeFile(workbook, 'Interspace_DataBoss_Site_Upload_Template.xlsx');
+    XLSX.writeFile(workbook, 'SiteSync_Site_Upload_Template.xlsx');
     onShowToast('Template Downloaded', 'Spreadsheet template saved to your downloads.', 'success');
   };
 
@@ -585,11 +584,11 @@ export const DataBossStudio: React.FC<DataBossStudioProps> = ({
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-rose-200 border border-white/10 mb-3">
-              <InterspaceMotif size={14} variant="gradient" />
-              <span>Interspace Master Data & Sourcing Studio</span>
+              <RefreshCw className="w-3.5 h-3.5 text-[#F37023]" />
+              <span>Master Data & Sourcing Studio</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-              Interspace <span className="bg-gradient-to-r from-[#F37023] to-[#E31B64] bg-clip-text text-transparent">DataBoss</span> Studio
+              <span className="bg-gradient-to-r from-[#F37023] to-[#E31B64] bg-clip-text text-transparent">SiteSync</span> Studio
             </h1>
             <p className="mt-1 text-sm text-slate-300 max-w-2xl">
               Centralized operations workspace for onboarding hoardings, batch uploading Excel inventory sheets, maintaining vendor contacts, and managing advertiser categories.

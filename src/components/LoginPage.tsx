@@ -16,8 +16,6 @@ import { AuthUser } from '../types/auth';
 import { authService, getTodayDateCode } from '../services/auth';
 import {
   InterspaceLogo,
-  InterspaceMotif,
-  IcraAnalyticsBadge,
   SubtleBrandWatermark,
 } from './InterspaceBrand';
 
@@ -84,7 +82,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
               </span>
             </h1>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Sign in to access <strong>Interspace Advantage</strong> & <strong>Interspace DataBoss</strong>
+              Sign in to access <strong>BlitzDeck</strong> & <strong>SiteSync</strong>
             </p>
           </div>
         </div>
@@ -176,7 +174,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <>
-                <span>Sign In to Interspace</span>
+                <span>Sign In to Portal</span>
                 <ArrowRight className="w-4 h-4" />
               </>
             )}
@@ -188,7 +186,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
           <div className="p-3.5 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200/80 dark:border-rose-900/40 space-y-2">
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                <InterspaceMotif size={13} variant="gradient" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#E31B64]" />
                 <span>Quick Access Profile</span>
               </span>
               <button
@@ -211,10 +209,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, isDark }) 
           </div>
         </div>
 
-        {/* Footer Emblem */}
-        <div className="flex justify-center pt-1">
-          <IcraAnalyticsBadge />
-        </div>
       </div>
     </div>
   );

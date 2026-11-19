@@ -1,19 +1,14 @@
 import React from 'react';
 import type { OOHSite } from '../types/ooh';
 import {
-  Compass,
-  Database,
+  Zap,
+  RefreshCw,
   ArrowRight,
   CheckCircle2,
   Layers,
   Sparkles,
 } from 'lucide-react';
-import {
-  InterspaceLogo,
-  InterspaceMotif,
-  IcraAnalyticsBadge,
-  SubtleBrandWatermark,
-} from './InterspaceBrand';
+import { SubtleBrandWatermark } from './InterspaceBrand';
 
 interface LandingHubProps {
   onSelectPortal: (portal: 'advantage' | 'databoss') => void;
@@ -39,16 +34,16 @@ export const LandingHub: React.FC<LandingHubProps> = ({
 
   return (
     <div className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full overflow-hidden">
-      {/* Subtle Interspace angled watermark backdrop */}
+      {/* Subtle angled watermark backdrop */}
       <SubtleBrandWatermark />
 
       {/* Hero Header */}
       <div className="text-center max-w-3xl mx-auto pt-2 pb-8 relative z-10">
         <div className="flex items-center justify-center mb-5">
           <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-bold bg-white dark:bg-slate-900 border border-rose-200/80 dark:border-rose-900/40 shadow-sm shadow-rose-500/5">
-            <InterspaceMotif size={18} variant="gradient" />
+            <Layers className="w-4 h-4 text-[#E31B64]" />
             <span className="bg-gradient-to-r from-[#E31B64] to-[#F37023] bg-clip-text text-transparent font-extrabold uppercase tracking-wider">
-              Interspace Communications OOH Suite
+              OOH Media Management Suite
             </span>
           </div>
         </div>
@@ -59,14 +54,14 @@ export const LandingHub: React.FC<LandingHubProps> = ({
 
         <p className="mt-4 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto">
           Choose between{' '}
-          <strong className="text-[#E31B64] font-semibold">Interspace Advantage</strong> for media planning, ICR&A analytics & client pitch retrieval, or{' '}
-          <strong className="text-[#F37023] font-semibold">Interspace DataBoss</strong> for inventory input, bulk spreadsheet upload & database management.
+          <strong className="text-[#E31B64] font-semibold">BlitzDeck</strong> for media planning, OOH analytics & client pitch retrieval, or{' '}
+          <strong className="text-[#F37023] font-semibold">SiteSync</strong> for inventory input, bulk spreadsheet upload & database management.
         </p>
       </div>
 
       {/* Dual Portal Cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch max-w-6xl mx-auto w-full relative z-10">
-        {/* Portal 1: Interspace Advantage (Planning & Retrieval) */}
+        {/* Portal 1: BlitzDeck (Planning & Retrieval) */}
         <div
           onClick={() => onSelectPortal('advantage')}
           className="group relative flex flex-col justify-between rounded-3xl p-8 sm:p-9 bg-white dark:bg-slate-900/90 border-2 border-rose-100 dark:border-rose-950/60 hover:border-[#E31B64] dark:hover:border-[#E31B64] shadow-xl shadow-rose-500/5 hover:shadow-2xl hover:shadow-rose-500/15 transition-all duration-300 cursor-pointer overflow-hidden transform hover:-translate-y-1"
@@ -79,11 +74,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
             <div className="flex items-center justify-between mb-6">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#E31B64] via-[#E63946] to-[#F37023] text-white flex items-center justify-center shadow-lg shadow-rose-500/25 group-hover:scale-105 transition-transform p-[2px]">
                 <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 flex items-center justify-center">
-                  <img
-                    src="/assets/logos/interspace-icon-circle.png"
-                    alt="Interspace"
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  <Zap className="w-7 h-7 text-[#E31B64] fill-[#E31B64]/15" />
                 </div>
               </div>
 
@@ -100,7 +91,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
                 Media Discovery & Pitch Engine
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white group-hover:text-[#E31B64] dark:group-hover:text-rose-400 transition-colors flex items-center gap-2">
-                <span>Interspace Advantage</span>
+                <span>BlitzDeck</span>
               </h2>
             </div>
 
@@ -108,9 +99,10 @@ export const LandingHub: React.FC<LandingHubProps> = ({
               Explore outdoor media across 800+ Indian cities, filter by client industry vertical or vendor, inspect GIS corridor maps, and generate client-ready Excel and PowerPoint pitch decks in seconds.
             </p>
 
-            {/* ICR&A Intelligence Badge embed */}
-            <div className="mt-4">
-              <IcraAnalyticsBadge />
+            {/* Intelligence Badge */}
+            <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300">
+              <Sparkles className="w-3.5 h-3.5 text-[#E31B64]" />
+              <span className="font-semibold">OOH Research, GIS & Pitch Deck Engine</span>
             </div>
 
             {/* Key Capabilities List */}
@@ -140,13 +132,13 @@ export const LandingHub: React.FC<LandingHubProps> = ({
               Browse {totalSites} Live Media Assets
             </span>
             <button className="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#E31B64] via-[#E63946] to-[#F37023] hover:from-[#D81B60] hover:to-[#EA580C] text-white shadow-md shadow-rose-500/25 flex items-center gap-2 transition-all">
-              <span>Launch Advantage</span>
+              <span>Launch BlitzDeck</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>
 
-        {/* Portal 2: Interspace DataBoss (Input, Upload & Save) */}
+        {/* Portal 2: SiteSync (Input, Upload & Save) */}
         <div
           onClick={() => onSelectPortal('databoss')}
           className="group relative flex flex-col justify-between rounded-3xl p-8 sm:p-9 bg-white dark:bg-slate-900/90 border-2 border-orange-100 dark:border-orange-950/60 hover:border-[#F37023] dark:hover:border-[#F37023] shadow-xl shadow-orange-500/5 hover:shadow-2xl hover:shadow-orange-500/15 transition-all duration-300 cursor-pointer overflow-hidden transform hover:-translate-y-1"
@@ -159,7 +151,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
             <div className="flex items-center justify-between mb-6">
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#F37023] via-[#E63946] to-[#E31B64] text-white flex items-center justify-center shadow-lg shadow-orange-500/25 group-hover:scale-105 transition-transform p-[2px]">
                 <div className="w-full h-full rounded-[14px] bg-white dark:bg-slate-900 flex items-center justify-center">
-                  <Database className="w-7 h-7 text-[#F37023]" />
+                  <RefreshCw className="w-7 h-7 text-[#F37023]" />
                 </div>
               </div>
 
@@ -176,7 +168,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
                 Master Database & Sourcing Studio
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white group-hover:text-[#F37023] dark:group-hover:text-amber-400 transition-colors flex items-center gap-2">
-                <span>Interspace DataBoss</span>
+                <span>SiteSync</span>
               </h2>
             </div>
 
@@ -186,7 +178,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
 
             {/* Sourcing Indicator */}
             <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300">
-              <InterspaceMotif size={14} variant="gradient" />
+              <Sparkles className="w-3.5 h-3.5 text-[#F37023]" />
               <span className="font-semibold">Automated Nomenclature & Geo-Centroid Engine</span>
             </div>
 
@@ -217,7 +209,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
               Enter Operations & Upload Vault
             </span>
             <button className="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#F37023] via-[#E63946] to-[#E31B64] hover:from-[#EA580C] hover:to-[#D81B60] text-white shadow-md shadow-orange-500/25 flex items-center gap-2 transition-all">
-              <span>Launch DataBoss</span>
+              <span>Launch SiteSync</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -229,7 +221,7 @@ export const LandingHub: React.FC<LandingHubProps> = ({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-100 dark:border-slate-800">
           <div>
             <h3 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <InterspaceMotif size={16} variant="gradient" />
+              <Layers className="w-4 h-4 text-[#E31B64]" />
               <span>Live Master Inventory Telemetry</span>
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400">

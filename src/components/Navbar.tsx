@@ -10,14 +10,14 @@ import {
   Home,
   ArrowRight,
   LogOut,
-  User as UserIcon,
+  Zap,
+  RefreshCw,
 } from 'lucide-react';
 import { AuthUser } from '../types/auth';
 import {
   InterspaceAdvantageLogo,
   InterspaceDataBossLogo,
   InterspaceLogo,
-  InterspaceMotif,
 } from './InterspaceBrand';
 
 interface NavbarProps {
@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div
               onClick={() => onSelectPortal('landing')}
               className="cursor-pointer group select-none"
-              title="Return to Interspace Portal Hub"
+              title="Return to Portal Hub"
             >
               {currentPortal === 'advantage' ? (
                 <InterspaceAdvantageLogo isDark={isDark} />
@@ -104,8 +104,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : 'text-slate-600 dark:text-slate-400 hover:text-[#E31B64] dark:hover:text-rose-300'
               }`}
             >
-              <InterspaceMotif size={14} variant={currentPortal === 'advantage' ? 'white' : 'gradient'} />
-              <span>Interspace Advantage</span>
+              <Zap className="w-3.5 h-3.5" />
+              <span>BlitzDeck</span>
             </button>
 
             <button
@@ -116,8 +116,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : 'text-slate-600 dark:text-slate-400 hover:text-[#F37023] dark:hover:text-amber-300'
               }`}
             >
-              <InterspaceMotif size={14} variant={currentPortal === 'databoss' ? 'white' : 'gradient'} />
-              <span>Interspace DataBoss</span>
+              <RefreshCw className="w-3.5 h-3.5" />
+              <span>SiteSync</span>
             </button>
           </div>
 
@@ -130,7 +130,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onSelectPortal('advantage')}
                   className="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white flex items-center gap-1"
                 >
-                  <span>Advantage</span>
+                  <span>BlitzDeck</span>
                   <ArrowRight className="w-3 h-3" />
                 </button>
               ) : currentPortal === 'advantage' ? (
@@ -138,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onSelectPortal('databoss')}
                   className="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-[#F37023] to-[#E31B64] text-white flex items-center gap-1"
                 >
-                  <span>DataBoss</span>
+                  <span>SiteSync</span>
                   <ArrowRight className="w-3 h-3" />
                 </button>
               ) : (
@@ -146,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => onSelectPortal('advantage')}
                   className="px-2.5 py-1.5 rounded-lg text-xs font-bold bg-gradient-to-r from-[#E31B64] to-[#F37023] text-white flex items-center gap-1"
                 >
-                  <span>Advantage</span>
+                  <span>BlitzDeck</span>
                   <ArrowRight className="w-3 h-3" />
                 </button>
               )}
@@ -156,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {currentPortal !== 'landing' && (
               <button
                 onClick={() => onSelectPortal('landing')}
-                title="Return to Interspace Landing Hub"
+                title="Return to Portal Hub"
                 className="p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-rose-50/60 dark:hover:bg-rose-950/30 hover:text-[#E31B64] dark:hover:text-rose-300 transition-colors flex items-center gap-1.5 border border-slate-200/80 dark:border-slate-800"
               >
                 <Home className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#E31B64]" />

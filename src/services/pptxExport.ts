@@ -15,7 +15,7 @@ export async function generateOOHPresentation({
   sites,
   presentationTitle = 'Premium Out-Of-Home (OOH) Media Proposal',
   clientName = 'Valued Advertiser / Brand Partner',
-  agencyName = 'Interspace Communications',
+  agencyName = 'BlitzDeck Media',
   includeCover = true,
   onProgress,
 }: PptxExportOptions): Promise<void> {

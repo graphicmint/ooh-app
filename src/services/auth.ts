@@ -18,7 +18,7 @@ export function formatNameFromEmail(email: string): string {
     .split(/[._-]/)
     .filter(Boolean)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-    .join(' ') || 'Interspace Team Member';
+    .join(' ') || 'OOH Team Member';
 }
 
 export const authService = {
@@ -58,7 +58,7 @@ export const authService = {
       email: trimmedEmail,
       name,
       role: trimmedEmail.includes('ganesh') ? 'Senior Media Operations & Planner' : 'Media Operations Specialist',
-      organization: 'Interspace Communications India',
+      organization: 'BlitzDeck & SiteSync OOH',
       loggedInAt: new Date().toISOString(),
     };
 
